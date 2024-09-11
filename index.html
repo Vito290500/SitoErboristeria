@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erboristeria - Carla Avveniente</title>
+    <link rel="icon" href="includes/img/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Gsap import -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    
+    <!-- app.js import -->
+    <script src="app.js" defer></script>
+
+    <!-- Carousel import -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+    <!-- leaflet.js import -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+</head>
+<body>
+    <!-- Backdrop Mobile Nav View -->
+    <div class="backdrop" id="backdrop">
+        <button class="closeModal" id="closeModal"><svg fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/></svg></button>
+        <ul class="mobile__nav_items" id="mobile__nav">
+            <li><a href="#Offerte">Offerte Lampo</a></li>
+            <li><a href="#Prodotti">Prodotti</a></li>
+            <li><a href="#News">News</a></li>
+            <li><a href="#ChiSiamo">Chi siamo?</a></li>    
+            <li><a class="MobileVieniATrovarci" href="#VieniATrovarci">Vieni a trovarci</a></li>
+        </ul>
+    </div>
+
+    <!-- Nav Bar  -->
+    <header>
+        <nav class="navBar">
+            <div class="nav__title">
+                <a href="#">l'Herborista</a>
+            </div>
+            
+            <ul class="nav__items">
+                <li><a href="#Offerte">Offerte Lampo</a></li>
+                <li><a href="#Prodotti">Prodotti</a></li>
+                <li><a href="#News">Novità</a></li>
+                <li><a href="#ChiSiamo">Chi siamo?</a></li>    
+            </ul>
+            <a class="VieniATrovarci" href="#VieniATrovarci">Vieni a trovarci</a>
+
+            <button class="hamburger"><svg fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg></button>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- Home Section -->
+        <section id="Home" class="Home"> 
+            <div class="Home_Image"></div>
+            <div id="backdropHome"></div>
+            <div class="Home_Description">
+                <img class="logo" src="includes/img/logo2.png" alt="">
+                <h3>" Il Tuo Benessere al centro di tutto "</h3>
+
+              
+
+                <div class="Home_Description_btn">
+                    <a href="#ChiSiamo" class="button-type">Chi siamo?</a>
+                    <a href="#VieniATrovarci" class="button-type">Vieni a Trovarci</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offerte Lampo Section -->
+        <section id="Offerte">
+            <h1>Offerte Lampo</h1>
+
+            <div id="offerte-carousel" class="p-3 m-0 border-0 bd-example m-0 border-0"  style="width: 100%; height: 500px;">
+                <!-- Carousel Item -->
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <title>Placeholder</title>
+                            <image href="dati/immaginiOfferte/carosello1.webp" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" opacity="1"></image>
+                           <!--  <text x="50%" y="50%" fill="rgb(14, 108, 62)" dy=".3em">Offerte e Promozioni</text> -->
+                        </svg>
+                    </div>
+
+                    <div class="carousel-item active">
+                      <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <image href="dati/immaginiOfferte/carosello2.webp" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"  opacity="1"></image>
+                        <!-- <text x="50%" y="50%" fill="rgb(14, 108, 62)" dy=".3em">Prodotti Consigliati</text> -->
+                    </svg>
+                    </div>
+
+                    <div class="carousel-item">
+                      <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <image href="dati/immaginiOfferte/carosello3.webp" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" opacity="1"></image>
+                       <!--  <text x="50%" y="50%" fill="rgb(14, 108, 62)" dy=".3em">Ultime rimanenze</text> -->
+                    </svg>
+                    </div>
+                  </div>
+
+                  <!-- Button carousel -->
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+            </div>
+
+            <div class="prodotti-consigliati">
+                <h2>Prodotti Consigliati</h2>
+                <div class="prodotti-consigliat-container" id="prodotti-consigliati-list">
+                    <!-- Dynamic generated by js -->
+                </div>
+            </div>
+
+            <div class="prodotti-scontati">
+                <h2>Prodotti Scontati</h2>
+                <div class="prodotti-scontati-container" id="prodotti-scontati-list">
+                    <!-- Dynamic generated by js -->
+                </div>
+            </div>
+            
+
+        </section>
+
+        <!-- Prodotti Section -->
+        <section id="Prodotti">
+
+            
+            <div class="barra-prodotti">
+                <h2 class="prodotti-title">Tutti I prodotti</h2>
+            </div>
+
+            
+
+
+            <div class="prodotti-categorie-container">
+
+                <div class="categorie-container">
+                    <h4>Categorie</h4>
+
+                    <!-- Tradizioni -->
+                    <div class="microCategorie-div">
+                        <button class="macroCategorie" id="Tradizione-erboristica">Tradizione erboristica</button>
+                        <p class="modal-btn" refer="microTradizione">↓</p>
+                    </div>      
+                    <div class="microCategorieTradizione" id="microTradizione">
+                        <button class="microCategorie" id="microCategorie">Tisane composte, spezie ed erbe officinali sfuse</button>
+                        <button class="microCategorie" id="microCategorie">Tè sfusi</button>
+                        <button class="microCategorie" id="microCategorie">Infusi in confezione</button>
+                        <button class="microCategorie" id="microCategorie">Oli essenziali</button>
+                        <button class="microCategorie" id="microCategorie">Oli cosmetici </button>
+                        <button class="microCategorie" id="microCategorie">Fiori di Bach</button>
+                        <button class="microCategorie" id="microCategorie">Fiori di Bach</button>
+	                    <button class="microCategorie" id="microCategorie">Hennè</button>
+                    </div>
+
+
+                    <!-- Idee  -->
+                    <div class="microCategorie-div">
+                        <button class="macroCategorie" id="Idee-regalo-ed-oggettistica">Idee regalo ed oggettistica</button>
+                        <p class="modal-btn" refer="microIdee">↓</p>
+                    </div>          
+                    <div class="microCategorieIdee" id="microIdee">
+                        <button class="microCategorie" id="microCategorie">Buoni regalo</button>
+                        <button class="microCategorie" id="microCategorie">Lampade di sale rosa Himalaya</button>
+                        <button class="microCategorie" id="microCategorie">Gioielli in Capim Durado (oro vegan)</button>
+                        <button class="microCategorie" id="microCategorie">Pietre, cristalli e gioielli</button>
+                        <button class="microCategorie" id="microCategorie">Marimo (alga palla)</button>
+                        <button class="microCategorie" id="microCategorie">Incensi </button>
+                        <button class="microCategorie" id="microCategorie">Candele</button>
+	                    <button class="microCategorie" id="microCategorie">Profuma ambienti</button>
+                        <button class="microCategorie" id="microCategorie">Tisaniere, tazze, thermos e accessori</button>
+                        <button class="microCategorie" id="microCategorie">Foulard Bamboo</button>
+                        <button class="microCategorie" id="microCategorie">Borse, cestini e contenitori </button>
+	                    <button class="microCategorie" id="microCategorie">Speciale Natale</button>
+                        <button class="microCategorie" id="microCategorie">Speciale San Valentino</button>
+                    </div>
+
+
+                    <!-- Alimentazione -->
+
+                    <div class="microCategorie-div">
+                        <button class="macroCategorie" id="Alimentazione-Naturale">Alimentazione Naturale</button>
+                        <p class="modal-btn" refer="microAlimentazione">↓</p>
+                    </div>
+                    
+                    <div class="microCategorieAlimentazione" id="microAlimentazione">
+                        <button class="microCategorie" id="microCategorie">Chetogenica, cheto friendly e low-carb</button>
+                        <button class="microCategorie" id="microCategorie">Oli e burri alimentari</button>
+                        <button class="microCategorie" id="microCategorie">Creme spalmabili e confetture</button>
+                    </div>
+
+
+                    <!-- Integratori naturali -->
+
+                    <div class="microCategorie-div">
+                        <button class="macroCategorie" id="Integratori-Naturali">Integratori Naturali</button>
+                        <p class="modal-btn" refer="microIntegratori">↓</p>
+                    </div>
+
+                    <div class="microCategorieIntegratori" id="microIntegratori">
+                        <button class="microCategorie" id="microCategorie">Energia e stanchezza </button>
+                        <button class="microCategorie" id="microCategorie">Ansia e insonnia</button>
+                        <button class="microCategorie" id="microCategorie">Memoria e stress</button>
+                        <button class="microCategorie" id="microCategorie">Allergie e sistema immunitario</button>
+                        <button class="microCategorie" id="microCategorie">Digestione e benessere intestinale</button>
+                        <button class="microCategorie" id="microCategorie">Salute delle ossa e delle articolazioni</button>
+                        <button class="microCategorie" id="microCategorie">Controllo del peso e metabolismo</button>
+	                    <button class="microCategorie" id="microCategorie">Cura dei capelli e unghie</button>
+                        <button class="microCategorie" id="microCategorie">Occhi e orecchie</button>
+                        <button class="microCategorie" id="microCategorie">Sfera sessuale</button>
+                        <button class="microCategorie" id="microCategorie">Sport e attività fisica</button>
+	                    <button class="microCategorie" id="microCategorie">Vitamine e Sali minerali</button>
+                        <button class="microCategorie" id="microCategorie">Equilibrio ormonale e benessere femminile</button>
+                        <button class="microCategorie" id="microCategorie">Detox e drenaggio</button>
+                        <button class="microCategorie" id="microCategorie">Circolazione</button>
+                        <button class="microCategorie" id="microCategorie">Colesterolo, glicemia, trigliceridi e pressione</button>
+	                    <button class="microCategorie" id="microCategorie">Alito cattivo</button>
+                        <button class="microCategorie" id="microCategorie">Vie respiratorie</button>
+                    </div>
+
+
+                    <!-- Cosmetici -->
+            
+                    <div class="microCategorie-div">    
+                        <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">Cosmetici e cura della persona</button>
+                        <p class="modal-btn" refer="microCosmetici">↓</p>
+                    </div>
+
+                    <div class="microCategorieCosmetici" id="microCosmetici">
+                    
+                        <div class="micro-macroCategorie">    
+                            <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">> Viso</button>
+                            <p class="modal-btn" refer="microViso">↓</p>
+                        </div>
+
+                        <div class="microCategorieCosmetici" id="microViso">
+                            <button class="microCategorie" id="microCategorie">Make-up naturale</button>
+                            <button class="microCategorie" id="microCategorie">Detersione viso</button>
+                            <button class="microCategorie" id="microCategorie">Struccanti viso e occhi</button>
+                            <button class="microCategorie" id="microCategorie">Maschere, Scrub e peeling</button>
+                            <button class="microCategorie" id="microCategorie">Tonici e rinfrescanti</button>
+                            <button class="microCategorie" id="microCategorie">Creme Viso </button>
+                            <button class="microCategorie" id="microCategorie">Sieri viso</button>
+                            <button class="microCategorie" id="microCategorie">Contorno occhi e patch</button>
+                            <button class="microCategorie" id="microCategorie">Cura delle labbra</button>
+                        </div>
+
+                        <div class="micro-macroCategorie">    
+                            <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">> Corpo</button>
+                            <p class="modal-btn" refer="microCorpo">↓</p>
+                        </div>
+                        
+                        <div class="microCategorieCosmetici" id="microCorpo">
+                            <button class="microCategorie" id="microCategorie">anticellulite e rassodanti</button>
+                            <button class="microCategorie" id="microCategorie">scrub corpo</button>
+                            <button class="microCategorie" id="microCategorie">Profumi e acqua profumate</button>
+                            <button class="microCategorie" id="microCategorie">Bagnodoccia</button>
+                            <button class="microCategorie" id="microCategorie">Creme corpo </button>
+                            <button class="microCategorie" id="microCategorie">Solari</button>
+                            <button class="microCategorie" id="microCategorie">Prodotti per capelli</button>
+                            <button class="microCategorie" id="microCategorie">repellenti per insetti</button>
+                            <button class="microCategorie" id="microCategorie">Cosmetica solida</button>
+                            <button class="microCategorie" id="microCategorie">Prodotti per bambini</button>
+                            <button class="microCategorie" id="microCategorie">Igiene intima</button>
+                        </div>
+
+                        <div class="micro-macroCategorie">    
+                            <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">> Capelli</button>
+                            <p class="modal-btn" refer="microCapelli">↓</p>
+                        </div>
+
+                        <div class="microCategorieCosmetici" id="microCapelli">
+                            <button class="microCategorie" id="microCategorie">Maschere, balsami e scrub</button>
+                            <button class="microCategorie" id="microCategorie">Shampoo</button>
+                            <button class="microCategorie" id="microCategorie">tinture per capelli</button>
+                            <button class="microCategorie" id="microCategorie">sieri e lozioni protettive</button>
+                            <button class="microCategorie" id="microCategorie">styling</button>
+                            <button class="microCategorie" id="microCategorie">trattamenti curativi</button>
+                        </div>
+            
+                    </div>
+                       
+
+                </div>
+
+                <div class="prodotti-pagination-container">
+
+                    <div class="tools-navbar-prodotti-container">
+
+                        <p id="categoria-attiva">>  Tradizione-erboristica</p>
+
+                        <div class="search-bar">
+                            <input id="search-field" type="text" class="search-field" placeholder="Cerca prodotti...">
+                            <button id="search-btn" class="search-btn"><img src="includes/img/ricerca.png" alt=""></button>
+                        </div>
+                        
+                    </div>
+
+                    <div class="prodotti-container" id="product-list">
+                        <!-- Dynamically added with js-->
+                    </div>
+        
+                    <div class="pagination" id="pagination">
+        
+                        <!-- Dynamically handling -->
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- News Section -->
+        <section id="News">
+
+            <h2 class="news-title">Novità</h2>
+
+            <div class="news-presentation">
+                <div class="news-description">
+                    <h3>Resta Aggiornato</h3>
+                    <p>Rimani aggiornato sulle ultime novità sulla salute e il benessere e non solo qui troverai tutti i nostri suggerimenti su ricette e integrazione seguito da promozioni e offerte.</p>
+                    <button class="button-description" onclick="window.location.href='#VieniATrovarci';">I nostri Social</button>
+                    
+                </div>
+                <div class="news-image-container">
+                    <img src="https://erboristerialofficinale.it/wp-content/uploads/2022/11/cover-home-page-2048x802.jpg" alt="">
+                </div>
+            </div>
+
+            <h2 class="last-tittle">Scopri i Nuovi prodotti</h2>
+            <div class="news-product-container">
+                
+                <div class="news-card-products">
+                    <img src="https://erboristeria.com/cdn/shop/files/1240x940-bannerHP-aloe_fe1b1136-d3b6-42a1-83b0-e29af43ae787_1170x.jpg?v=1721118456" alt="">
+                
+                    <div class="news-card-products-description">
+                        <h3>Il Benessere dell'Aloe</h3>
+                        <button class="button-description" onclick="window.location.href='#Prodotti';">Scopri</button>
+                    </div>
+
+                
+                </div>
+                <div class="news-card-products">
+                    <img src="https://erboristeria.com/cdn/shop/files/1240x940-bannerHP-capelli_c427d93f-426e-45e3-bc05-68d03554b43e_1170x.jpg?v=1721118456" alt="">
+               
+                    <div class="news-card-products-description">
+                        <h3>Cura dei capelli</h3>
+                        <button class="button-description" onclick="window.location.href='#Prodotti';">Scopri</button>
+                    </div>
+                
+                </div>
+
+                
+               
+
+            </div>
+
+
+            <div id="suggestion" class="suggestiion p-3 m-0 border-0 bd-example m-0 border-0" style="border-radius: 0;">
+
+                <h2 class="last-tittle">I Post instagram più recenti</h2>
+
+                
+                <div class="row row-cols-1 row-cols-md-4 g-4 justify-content-center">
+                        <div class="col" style="width: 400px;">
+                          <div class="card h-100" style="border-radius: 0;">
+                            <img
+                              src="dati/immaginiNews/post1.png"
+                              class="card-img-top"
+                              alt="Card image cap"
+                              style="height: 400px; object-fit: cover; border-radius: 0;"
+                            >
+                            <div class="card-body" style="height: 4rem; border-radius: 0;">
+                              <h5 class="card-title">Perchè è importante la vitamina C?</h5>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="col" style="width: 400px;">
+                          <div class="card h-100" style="border-radius: 0;">
+                            <img
+                              src="dati/immaginiNews/post2.png"
+                              class="card-img-top"
+                              alt="Card image cap"
+                              style="height: 400px; object-fit: cover; border-radius: 0;"
+                            >
+                            <div class="card-body" style="height: 4rem; border-radius: 0;">
+                              <h5 class="card-title">Super Promo fine stagione</h5>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="col" style="width: 400px;">
+                          <div class="card h-100" style="border-radius: 0;">
+                            <img
+                              src="dati/immaginiNews/post3.png"
+                              class="card-img-top"
+                              alt="Card image cap"
+                              style="height: 400px; object-fit: cover; border-radius: 0;"
+                            >
+                            <div class="card-body" style="height: 4rem; border-radius: 0;">
+                              <h5 class="card-title">Energia, benesse e vitalità in un'unica forumla!</h5>
+                             
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="col" style="width: 400px;">
+                          <div class="card h-100" style="border-radius: 0;">
+                            <img
+                              src="dati/immaginiNews/post4.png"
+                              class="card-img-top"
+                              alt="Card image cap"
+                              style="height: 400px; object-fit: cover; border-radius: 0;"
+                            >
+                            <div class="card-body" style="height: 4.5rem; border-radius: 0;">
+                              <h5 class="card-title">Nuovi orari di apertura</h5>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+                      
+            </div>  
+
+
+
+        </section>
+   
+        <!-- Chi siamo Section -->
+        <section id="ChiSiamo">
+
+            <div class="container-one">
+                <img src="includes/img/negozio.jpg" alt="">
+                <div class="container-one-description">
+                    <h3>Chi Siamo?</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis inventore iure laboriosam similique amet in necessitatibus fuga autem, labore cum reprehenderit voluptas esse, nisi ullam ab voluptatum quod? Fugit, distinctio.</p>
+                </div>
+            </div>
+            <div class="container-two">
+                <div class="container-two-description">
+                    <h3>Presentazione</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis inventore iure laboriosam similique amet in necessitatibus fuga autem, labore cum reprehenderit voluptas esse, nisi ullam ab voluptatum quod? Fugit, distinctio.</p>
+                </div>
+                <img src="https://lh3.googleusercontent.com/p/AF1QipNkP1Q-BdBcS7iVloyxugNyYT9kkSCTT1Z-51Le=s1360-w1360-h1020" alt="">              
+            </div>
+
+        </section>
+        
+        <!-- Contact Me Section -->
+        <section id="VieniATrovarci">
+
+            <div class="negozio-information-container">
+                <div class="dove-siamo-container">
+                    <h2>Dove Siamo?</h2>
+                    <div id="map"></div>
+
+                    <script>
+                        var map = L.map('map').setView([41.2748574564919, 16.417245772489967], 13);
+                    
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            maxZoom: 19,
+                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                        }).addTo(map);
+                    
+                        var marker = L.marker([41.2748574564919, 16.417245772489967]).addTo(map);
+                        marker.bindPopup("<b>L'Herborista - dott. Carla Avveniente</b>").openPopup();
+                    </script>
+                </div>
+
+                <div class="contanct-container">
+
+                    <div class="place">
+
+                        <h3>Vieni a Trovarci</h3>
+                        <div class="information-container">
+                            <img src="includes/img/airplane.png" alt="">
+                            <p>Trani (BT), 76125</p>
+                        </div>
+
+                        <div class="information-container">
+                            <img src="includes/img/location.png" alt="">
+                            <p>Via Pietro Badoglio, 51</p>
+                        </div>
+
+                        <div class="information-container">
+                            <img src="includes/img/email.png" alt="">
+                            <p>email@email.com</p>
+                        </div>
+                            
+                        <div class="information-container">  
+                            <img src="includes/img/phone.png" alt="">
+                            <p>+39 391 439 3426</p>
+                        </div>
+
+                    </div>
+
+                    <div class="social">
+
+                        <h3 class="social-tittle">I Nostri Social</h3>
+                        <div class="information-container">   
+                            <img src="includes/img/instagram.png" alt="">
+                            <a href="https://www.instagram.com/erboristeria_herborista_trani/">link pagina instagram</a>
+                        </div>
+
+                        <div class="information-container">
+                            <img src="includes/img/facebook.png" alt="">
+                            <a href="https://www.facebook.com/erboristeriatrani">link pagina facebok</a>
+                        </div>
+
+                        <div class="information-container">
+                            <img src="includes/img/tik_tok.png" alt="">
+                            <p>link tik tok</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Section -->
+    <!-- <footer>
+        <div class="footer-container">
+            <div class="footer__title">
+                <h1>Vito Di Venosa <span>Portfolio</span></h1>
+            </div>
+            <ul class="footer__items">
+                <li><a href="#Home">HOME</a></li>
+                <li><a href="#AboutMe">ABOUT ME</a></li>
+                <li><a href="#Services">SERVICES</a></li>
+                <li><a href="#MyProjects">MY PROJECTS</a></li>
+            </ul>
+            <a href="mailto:divenosavito00@gmail.com?subject=Subject%20Here&body=Body%20text%20here" class="footer__report">Report</a>
+        </div>
+        <hr>
+        <p class="Copyright">Copyright @2024 All rights reserved | This templates was made by myself</p>
+    </footer> -->
+
+
+
+
+
+
+
+
+
+</body>
+</html>

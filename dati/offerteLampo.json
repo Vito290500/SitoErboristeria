@@ -1,0 +1,67 @@
+{
+    "prodottiConsigliati":[
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        },
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        }, 
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        },   
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        },  
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        }  
+    ],
+    "prodottiScontati":[
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        },
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        }, 
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        },   
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        },  
+        {
+            "nome": "carbone",
+            "immagine": "dati/immaginiOfferte/carbone.jpg",
+            "categoria": "integratori alimentari",
+            "descrizione" : "piccola descrizione"
+        }  
+    ]
+}
+
