@@ -1,7 +1,7 @@
 // Nav Bar Selector
 const OpenMenuBtn = document.querySelector('.hamburger');
 const CloseMenuBtn = document.getElementById('closeModal');
-const BackDrop = document.getElementById('backdrop');
+const BackDrop = document.getElementById('backdropNav');
 const MobileLinkNav = document.getElementById('mobile__nav');
 const Body = document.querySelector('body');
 const headerHeight = document.querySelector('.navBar').offsetHeight;
@@ -24,6 +24,21 @@ function close(){
 }
 OpenMenuBtn.addEventListener('click', open);
 CloseMenuBtn.addEventListener('click', close);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
