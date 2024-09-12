@@ -129,11 +129,13 @@ caricaDatiOfferteLampo()
 // Renderizzare i prodotti di default 
 const ProdottiContainer = document.getElementById('product-list');
 const paginationContainer = document.getElementById('pagination');
-const productsPerPage = 15;
+const productsPerPage = 18;
 let datiProdotti = {};
 let currentPage = 1;
 let currentCategory = 'Tradizione erboristica';
 const categoriaAttiva = document.getElementById('categoria-attiva');
+
+
 
 // Function to render products for the current category
 function rendereCategoria() {
@@ -164,7 +166,6 @@ function rendereCategoria() {
     }
     setupPagination();  // Update the pagination controls
 }
-
 function setupPagination() {
     paginationContainer.innerHTML = "";  // Clear the pagination container
 
@@ -249,13 +250,11 @@ function caricaDati() {
 // Load data on startup
 caricaDati();
 
-const tradizioneCategoria = document.getElementById('Tradizione-erboristica');
+const tradizioneCategoria = document.getElementById('TradizioneErboristica');
 const ideeCategoria = document.getElementById('Idee-regalo-ed-oggettistica'); 
 const alimentazioneCategoria = document.getElementById('Alimentazione-Naturale');
 const integratoriCategoria = document.getElementById('Integratori-Naturali');
 const comesticiCategoria = document.getElementById('Cosmetici-e-cura-della-persona');
-
-
 
 
 tradizioneCategoria.addEventListener('click', () => {
@@ -296,45 +295,153 @@ comesticiCategoria.addEventListener('click', () => {
 
 
 
-//Function microcategorie
 
+//microcategorie
+const microCategorieList = document.querySelectorAll('.microCategorie');
+var datiProdottiForMicroCat = {};
+const listOfMacro = ['Tradizione erboristica','Idee regalo ed oggettistica', 'Alimentazione naturale','Integratori Naturali','Cosmetici e cura della persona']
+let microCurrentCategory = '';
+let currentMicroCatPage = 1;
+const itemsPerMicroCatPage = 18;
+
+
+
+function renderCheck(){
+    
+    ProdottiContainer.innerHTML = "";
+    categoriaAttiva.textContent = "> " + microCurrentCategory
+
+  
+    for (const macro of listOfMacro) {
+
+        if (!datiProdottiForMicroCat[macro]) continue;
+
+   
+        for(let i = 0; i < datiProdottiForMicroCat[macro].length; i++){
+            var prodotto = datiProdottiForMicroCat[macro][i];
+
+            if (String(prodotto['microcategoria']).trim() === String(microCurrentCategory).trim()){
+
+                const productDiv = document.createElement("div");
+                productDiv.classList.add("products");
+                
+                productDiv.innerHTML = `
+                    <img src="${prodotto['immagine']}" alt="">
+                    <div class="products-description">
+                        <h3>${prodotto['nome']}</h3>
+                        <p class="categoria-prodotto">${prodotto['categoria']}</p>
+                        <div class="disponibilità">
+                            <p class="prezzo">prezzo: ${prodotto['prezzo']}€</p>
+                            <p class="sconto">${prodotto['promo']}</p>
+                        </div>
+                    </div>
+                `;
+
+                ProdottiContainer.appendChild(productDiv);
+            }
+        }
+
+    }
+}
+
+function caricaDatiMicroCat() {
+    fetch('./dati/prodotti.json') 
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Errore nel caricamento del file JSON');
+        }
+        return response.json();  
+      })
+      .then(dati => {
+        datiProdottiForMicroCat = dati; 
+        renderCheck()
+      })
+      .catch(error => {
+        console.error('Errore:', error);  
+      });
+}
+microCategorieList.forEach(microCatBtn =>{
+    microCatBtn.addEventListener('click', function(){
+        microCurrentCategory = microCatBtn.textContent;
+        caricaDatiMicroCat()
+    })
+})
+
+
+
+
+
+
+
+
+
+
+// Show modal Micro Categorie
 const modalBtns = document.querySelectorAll('.modal-btn');
+let activeModalMicro = null; 
+let activeModalBtn = null;  
 
-modalBtns.forEach(btn => {
-    btn.addEventListener('mouseenter', function() {
-        var categoria = btn.getAttribute('refer');
-        const categoriaMacro = document.getElementById(categoria);
-        
-        function closeModalMicro() {
-            categoriaMacro.classList.remove('active');
+modalBtns.forEach(modalBtn => {
+    var categoria = modalBtn.getAttribute('refer');
+    var categoriaBtn = modalBtn.getAttribute('refertwo');
+
+    function openModal() {
+        const modalMicro = document.getElementById(categoria);
+        const modal = document.getElementById(categoriaBtn);
+
+        if (activeModalMicro && activeModalMicro !== modalMicro) {
+            activeModalMicro.classList.remove('active');
+            activeModalBtn.classList.remove('active');
         }
 
-        function openModalMicroTrad() {
-            categoriaMacro.classList.add('active'); 
-            categoriaMacro.addEventListener('mouseleave', closeModalMicro);  
-        }
+      
+        modalMicro.classList.add('active');
+        modal.classList.add('active');
 
-        openModalMicroTrad();
-    });
+
+        activeModalMicro = modalMicro;
+        activeModalBtn = modal;
+
+
+        modalMicro.addEventListener('mouseleave', function() {
+            modalMicro.classList.remove('active');
+            modal.classList.remove('active');
+            activeModalMicro = null;
+            activeModalBtn = null;
+        });
+    }
+
+    modalBtn.addEventListener('mouseover', openModal);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Function search 
 const searchBtn = document.getElementById('search-btn')
 const searchField = document.getElementById('search-field')
+const searchModal = document.getElementById('search-modal');
+
+// Show modal search
+function showModal(){
+    const activatedModal = document.querySelectorAll('.active');
+    
+    for (const el of activatedModal){
+        el.classList.remove('active');
+    }
+    activeModalMicro = null;
+    activeModalBtn = null;
+    searchModal.style.display = "block";  
+    
+    const closeModalBtn = document.getElementById('closeModalBtn')
+    closeModalBtn.addEventListener('click', function(){
+        searchModal.style.display = "none";
+    })
+}
+
+
+
+
+
+
 
 
 function search(){
@@ -350,7 +457,7 @@ function search(){
     }
 }
 
-searchBtn.addEventListener('click', search)
+searchBtn.addEventListener('click', showModal)
 
 
 

@@ -3,102 +3,119 @@
         {
             "nome": "Carbone Vegetale Attivo",
             "categoria": "integratori alimentari",
+            "microcategoria": "",
             "immagine": "dati/immaginiProdotti/carbone.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Cumino Composto",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/cumino.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Eudigest",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/eudigest.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "ferplus",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/ferplus.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Ficus Carica",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/ficus.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Jurglans Composto",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/jurglans.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Magnesio",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/magnesio.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Olio di Germe",
             "categoria": "integratori alimentari",
+            "microcategoria": "Ansia e insonnia",
             "immagine": "dati/immaginiProdotti/olio.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Pilosella",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/pilosella.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Ribes Nigrum",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/ribes.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "rosmarino",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/rosmarino.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Snel",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/Snel.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Sns Ted",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/sns.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "Spaccapietra",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/spaccapietra.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "vitamida b",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "vitamida b",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg",
             "promo": "",
             "prezzo": "18.99"
         },{
             "nome": "vitamida b",
             "categoria": "integratori alimentari",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg",
             "promo": "",
             "prezzo": "18.99"
@@ -108,26 +125,31 @@
         {
             "nome": "vitamida b",
             "descrizione": "cosmesi",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg"
         },
         {
             "nome": "vitamida b",
             "descrizione": "cosmesi",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg"
         },
         {
             "nome": "vitamida b",
             "descrizione": "cosmesi",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg"
         },
         {
             "nome": "vitamida b",
             "descrizione": "cosmesi",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg"
         },
         {
             "nome": "vitamida b",
             "descrizione": "cosmesi",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg"
         }
     ],
@@ -135,6 +157,7 @@
         {
             "nome": "vitamida b",
             "descrizione": "tisane",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg"
         }
     ],
@@ -142,6 +165,7 @@
         {
             "nome": "vitamida b",
             "descrizione": "erbe",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg"
         }
     ],
@@ -149,6 +173,7 @@
         {
             "nome": "vitamida b",
             "descrizione": "oggettistica",
+            "microcategoria": "Energia e stanchezza",
             "immagine": "dati/immaginiProdotti/vitamina.jpg"
         }
     ]

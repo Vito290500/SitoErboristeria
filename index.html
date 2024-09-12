@@ -142,181 +142,240 @@
 
         </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- Prodotti Section -->
         <section id="Prodotti">
-
-            
+ 
             <div class="barra-prodotti">
                 <h2 class="prodotti-title">Tutti I prodotti</h2>
             </div>
 
-            
-
-
             <div class="prodotti-categorie-container">
 
-                <div class="categorie-container">
-                    <h4>Categorie</h4>
+                <div class="tools-navbar-prodotti-container">
 
-                    <!-- Tradizioni -->
-                    <div class="microCategorie-div">
-                        <button class="macroCategorie" id="Tradizione-erboristica">Tradizione erboristica</button>
-                        <p class="modal-btn" refer="microTradizione">↓</p>
-                    </div>      
-                    <div class="microCategorieTradizione" id="microTradizione">
+                    <div class="search-modal" id="search-modal">
+                        <input id="search-field" type="text" class="search-field" placeholder="Cerca prodotti...">
+                        <button class="close-search-modal" id="closeModalBtn">x</button>
+                        <button id="search-btn-modal" class="search-btn-modal"><img src="includes/img/ricerca.png" alt=""></button>
+                    </div>
+                    
+
+                    <p id="categoria-attiva">>  Tradizione-erboristica</p>
+
+                    <div class="categorie-nav-bar-container">
+    
+                        <!-- Macro Categorie Tradizioni -->
+                        <div class="macroCategorie-div">
+                            <button class="macroCategorie" id="TradizioneErboristica">Tradizione erboristica
+                                <p class="modal-btn" refer="microTradizione" refertwo="TradizioneErboristica">
+                                    <img src="includes/img/freccia.png" alt=""></p>
+                            </button>       
+                        </div>      
+                    
+                        <!-- Macro Categorie Idee  -->
+                        <div class="macroCategorie-div">
+                            <button class="macroCategorie" id="Idee-regalo-ed-oggettistica">Idee regalo ed oggettistica
+                                <p class="modal-btn" refer="microIdee" refertwo="Idee-regalo-ed-oggettistica">
+                                    <img src="includes/img/freccia.png" alt=""></p>
+                            </button>
+                            
+                        </div>          
+                      
+                        <!-- Macro Categorie Alimentazione -->
+                        <div class="macroCategorie-div">
+                            <button class="macroCategorie" id="Alimentazione-Naturale">Alimentazione Naturale
+                                <p class="modal-btn" refer="microAlimentazione" refertwo="Alimentazione-Naturale">
+                                    <img src="includes/img/freccia.png" alt="">
+                                </p>
+                            </button>
+                            
+                        </div>
+                        
+                        <!-- Macro Categorie Integratori naturali -->
+                        <div class="macroCategorie-div">
+                            <button class="macroCategorie" id="Integratori-Naturali" >Integratori Naturali
+                                <p class="modal-btn" refer="microIntegratori" refertwo="Integratori-Naturali">
+                                    <img src="includes/img/freccia.png" alt="">
+                                </p>
+                            </button>
+                           
+                        </div>
+
+                        <!-- Macro Categorie Cosmetici -->
+                        <div class="macroCategorie-div">    
+                            <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">Cosmetici e cura della persona
+                                <p class="modal-btn" refer="microCosmetici" refertwo="Cosmetici-e-cura-della-persona">
+                                    <img src="includes/img/freccia.png" alt="">
+                                </p>
+                            </button>
+                            
+                        </div>
+                           
+                    </div>
+
+                    <div class="search-bar">
+                        <button id="search-btn" class="search-btn"><img src="includes/img/ricerca.png" alt=""></button>
+                    </div>
+                    
+
+                    <!-- Micro Categorie Tradizione erboristica -->
+                    <div class="microCategorie-container" id="microTradizione">
                         <button class="microCategorie" id="microCategorie">Tisane composte, spezie ed erbe officinali sfuse</button>
                         <button class="microCategorie" id="microCategorie">Tè sfusi</button>
                         <button class="microCategorie" id="microCategorie">Infusi in confezione</button>
                         <button class="microCategorie" id="microCategorie">Oli essenziali</button>
                         <button class="microCategorie" id="microCategorie">Oli cosmetici </button>
                         <button class="microCategorie" id="microCategorie">Fiori di Bach</button>
-                        <button class="microCategorie" id="microCategorie">Fiori di Bach</button>
-	                    <button class="microCategorie" id="microCategorie">Hennè</button>
+                        <button class="microCategorie" id="microCategorie">Argille</button>
+                        <button class="microCategorie" id="microCategorie">Hennè</button>
                     </div>
 
-
-                    <!-- Idee  -->
-                    <div class="microCategorie-div">
-                        <button class="macroCategorie" id="Idee-regalo-ed-oggettistica">Idee regalo ed oggettistica</button>
-                        <p class="modal-btn" refer="microIdee">↓</p>
-                    </div>          
-                    <div class="microCategorieIdee" id="microIdee">
-                        <button class="microCategorie" id="microCategorie">Buoni regalo</button>
-                        <button class="microCategorie" id="microCategorie">Lampade di sale rosa Himalaya</button>
-                        <button class="microCategorie" id="microCategorie">Gioielli in Capim Durado (oro vegan)</button>
-                        <button class="microCategorie" id="microCategorie">Pietre, cristalli e gioielli</button>
-                        <button class="microCategorie" id="microCategorie">Marimo (alga palla)</button>
-                        <button class="microCategorie" id="microCategorie">Incensi </button>
-                        <button class="microCategorie" id="microCategorie">Candele</button>
-	                    <button class="microCategorie" id="microCategorie">Profuma ambienti</button>
-                        <button class="microCategorie" id="microCategorie">Tisaniere, tazze, thermos e accessori</button>
-                        <button class="microCategorie" id="microCategorie">Foulard Bamboo</button>
-                        <button class="microCategorie" id="microCategorie">Borse, cestini e contenitori </button>
-	                    <button class="microCategorie" id="microCategorie">Speciale Natale</button>
-                        <button class="microCategorie" id="microCategorie">Speciale San Valentino</button>
+                    <!-- Micro Categorie Idee regalo -->
+                    <div class="microCategorie-container" id="microIdee">
+                            <button class="microCategorie" id="microCategorie">Buoni regalo</button>
+                            <button class="microCategorie" id="microCategorie">Lampade di sale rosa Himalaya</button>
+                            <button class="microCategorie" id="microCategorie">Gioielli in Capim Durado (oro vegan)</button>
+                            <button class="microCategorie" id="microCategorie">Pietre, cristalli e gioielli</button>
+                            <button class="microCategorie" id="microCategorie">Marimo (alga palla)</button>
+                            <button class="microCategorie" id="microCategorie">Incensi </button>
+                            <button class="microCategorie" id="microCategorie">Candele</button>
+                            <button class="microCategorie" id="microCategorie">Profuma ambienti</button>
+                            <button class="microCategorie" id="microCategorie">Tisaniere, tazze, thermos e accessori</button>
+                            <button class="microCategorie" id="microCategorie">Foulard Bamboo</button>
+                            <button class="microCategorie" id="microCategorie">Borse, cestini e contenitori </button>
+                            <button class="microCategorie" id="microCategorie">Speciale Natale</button>
+                            <button class="microCategorie" id="microCategorie">Speciale San Valentino</button>
                     </div>
+    
+                    <!-- Micro Catregorie Alimentazione -->
+                    <div class="microCategorie-container" id="microAlimentazione">
+                            <button class="microCategorie" id="microCategorie">Chetogenica, cheto friendly e low-carb</button>
+                            <button class="microCategorie" id="microCategorie">Oli e burri alimentari</button>
+                            <button class="microCategorie" id="microCategorie">Creme spalmabili e confetture</button>
+                    </div> 
 
-
-                    <!-- Alimentazione -->
-
-                    <div class="microCategorie-div">
-                        <button class="macroCategorie" id="Alimentazione-Naturale">Alimentazione Naturale</button>
-                        <p class="modal-btn" refer="microAlimentazione">↓</p>
+                    <!-- Micro Categorie Integratori -->
+                    <div class="microCategorie-container" id="microIntegratori">
+                            <button class="microCategorie" id="microCategorie">Energia e stanchezza </button>
+                            <button class="microCategorie" id="microCategorie">Ansia e insonnia</button>
+                            <button class="microCategorie" id="microCategorie">Memoria e stress</button>
+                            <button class="microCategorie" id="microCategorie">Allergie e sistema immunitario</button>
+                            <button class="microCategorie" id="microCategorie">Digestione e benessere intestinale</button>
+                            <button class="microCategorie" id="microCategorie">Salute delle ossa e delle articolazioni</button>
+                            <button class="microCategorie" id="microCategorie">Controllo del peso e metabolismo</button>
+                            <button class="microCategorie" id="microCategorie">Cura dei capelli e unghie</button>
+                            <button class="microCategorie" id="microCategorie">Occhi e orecchie</button>
+                            <button class="microCategorie" id="microCategorie">Sfera sessuale</button>
+                            <button class="microCategorie" id="microCategorie">Sport e attività fisica</button>
+                            <button class="microCategorie" id="microCategorie">Vitamine e Sali minerali</button>
+                            <button class="microCategorie" id="microCategorie">Equilibrio ormonale e benessere femminile</button>
+                            <button class="microCategorie" id="microCategorie">Detox e drenaggio</button>
+                            <button class="microCategorie" id="microCategorie">Circolazione</button>
+                            <button class="microCategorie" id="microCategorie">Colesterolo, glicemia, trigliceridi e pressione</button>
+                            <button class="microCategorie" id="microCategorie">Alito cattivo</button>
+                            <button class="microCategorie" id="microCategorie">Vie respiratorie</button>
                     </div>
-                    
-                    <div class="microCategorieAlimentazione" id="microAlimentazione">
-                        <button class="microCategorie" id="microCategorie">Chetogenica, cheto friendly e low-carb</button>
-                        <button class="microCategorie" id="microCategorie">Oli e burri alimentari</button>
-                        <button class="microCategorie" id="microCategorie">Creme spalmabili e confetture</button>
-                    </div>
+    
 
-
-                    <!-- Integratori naturali -->
-
-                    <div class="microCategorie-div">
-                        <button class="macroCategorie" id="Integratori-Naturali">Integratori Naturali</button>
-                        <p class="modal-btn" refer="microIntegratori">↓</p>
-                    </div>
-
-                    <div class="microCategorieIntegratori" id="microIntegratori">
-                        <button class="microCategorie" id="microCategorie">Energia e stanchezza </button>
-                        <button class="microCategorie" id="microCategorie">Ansia e insonnia</button>
-                        <button class="microCategorie" id="microCategorie">Memoria e stress</button>
-                        <button class="microCategorie" id="microCategorie">Allergie e sistema immunitario</button>
-                        <button class="microCategorie" id="microCategorie">Digestione e benessere intestinale</button>
-                        <button class="microCategorie" id="microCategorie">Salute delle ossa e delle articolazioni</button>
-                        <button class="microCategorie" id="microCategorie">Controllo del peso e metabolismo</button>
-	                    <button class="microCategorie" id="microCategorie">Cura dei capelli e unghie</button>
-                        <button class="microCategorie" id="microCategorie">Occhi e orecchie</button>
-                        <button class="microCategorie" id="microCategorie">Sfera sessuale</button>
-                        <button class="microCategorie" id="microCategorie">Sport e attività fisica</button>
-	                    <button class="microCategorie" id="microCategorie">Vitamine e Sali minerali</button>
-                        <button class="microCategorie" id="microCategorie">Equilibrio ormonale e benessere femminile</button>
-                        <button class="microCategorie" id="microCategorie">Detox e drenaggio</button>
-                        <button class="microCategorie" id="microCategorie">Circolazione</button>
-                        <button class="microCategorie" id="microCategorie">Colesterolo, glicemia, trigliceridi e pressione</button>
-	                    <button class="microCategorie" id="microCategorie">Alito cattivo</button>
-                        <button class="microCategorie" id="microCategorie">Vie respiratorie</button>
-                    </div>
-
-
-                    <!-- Cosmetici -->
-            
-                    <div class="microCategorie-div">    
-                        <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">Cosmetici e cura della persona</button>
-                        <p class="modal-btn" refer="microCosmetici">↓</p>
-                    </div>
-
-                    <div class="microCategorieCosmetici" id="microCosmetici">
-                    
-                        <div class="micro-macroCategorie">    
-                            <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">> Viso</button>
-                            <p class="modal-btn" refer="microViso">↓</p>
-                        </div>
-
-                        <div class="microCategorieCosmetici" id="microViso">
-                            <button class="microCategorie" id="microCategorie">Make-up naturale</button>
-                            <button class="microCategorie" id="microCategorie">Detersione viso</button>
-                            <button class="microCategorie" id="microCategorie">Struccanti viso e occhi</button>
-                            <button class="microCategorie" id="microCategorie">Maschere, Scrub e peeling</button>
-                            <button class="microCategorie" id="microCategorie">Tonici e rinfrescanti</button>
-                            <button class="microCategorie" id="microCategorie">Creme Viso </button>
-                            <button class="microCategorie" id="microCategorie">Sieri viso</button>
-                            <button class="microCategorie" id="microCategorie">Contorno occhi e patch</button>
-                            <button class="microCategorie" id="microCategorie">Cura delle labbra</button>
-                        </div>
-
-                        <div class="micro-macroCategorie">    
-                            <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">> Corpo</button>
-                            <p class="modal-btn" refer="microCorpo">↓</p>
-                        </div>
+                    <!-- Micro Categorie Cosmetici -->
+                    <div class="microMacroCategorie-container" id="microCosmetici">
                         
-                        <div class="microCategorieCosmetici" id="microCorpo">
-                            <button class="microCategorie" id="microCategorie">anticellulite e rassodanti</button>
-                            <button class="microCategorie" id="microCategorie">scrub corpo</button>
-                            <button class="microCategorie" id="microCategorie">Profumi e acqua profumate</button>
-                            <button class="microCategorie" id="microCategorie">Bagnodoccia</button>
-                            <button class="microCategorie" id="microCategorie">Creme corpo </button>
-                            <button class="microCategorie" id="microCategorie">Solari</button>
-                            <button class="microCategorie" id="microCategorie">Prodotti per capelli</button>
-                            <button class="microCategorie" id="microCategorie">repellenti per insetti</button>
-                            <button class="microCategorie" id="microCategorie">Cosmetica solida</button>
-                            <button class="microCategorie" id="microCategorie">Prodotti per bambini</button>
-                            <button class="microCategorie" id="microCategorie">Igiene intima</button>
-                        </div>
+                            <div class="micro-macroCategoria">
+                                <h3>Viso</h3>
 
-                        <div class="micro-macroCategorie">    
-                            <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">> Capelli</button>
-                            <p class="modal-btn" refer="microCapelli">↓</p>
-                        </div>
-
-                        <div class="microCategorieCosmetici" id="microCapelli">
-                            <button class="microCategorie" id="microCategorie">Maschere, balsami e scrub</button>
-                            <button class="microCategorie" id="microCategorie">Shampoo</button>
-                            <button class="microCategorie" id="microCategorie">tinture per capelli</button>
-                            <button class="microCategorie" id="microCategorie">sieri e lozioni protettive</button>
-                            <button class="microCategorie" id="microCategorie">styling</button>
-                            <button class="microCategorie" id="microCategorie">trattamenti curativi</button>
-                        </div>
-            
+                                <div class="microMacroCategorie" id="microViso">
+                                    <button class="microCategorie" id="microCategorie">Make-up naturale</button>
+                                    <button class="microCategorie" id="microCategorie">Detersione viso</button>
+                                    <button class="microCategorie" id="microCategorie">Struccanti viso e occhi</button>
+                                    <button class="microCategorie" id="microCategorie">Maschere, Scrub e peeling</button>
+                                    <button class="microCategorie" id="microCategorie">Tonici e rinfrescanti</button>
+                                    <button class="microCategorie" id="microCategorie">Creme Viso </button>
+                                    <button class="microCategorie" id="microCategorie">Sieri viso</button>
+                                    <button class="microCategorie" id="microCategorie">Contorno occhi e patch</button>
+                                    <button class="microCategorie" id="microCategorie">Cura delle labbra</button>
+                                </div>
+                            </div>
+                            <div class="micro-macroCategoria">    
+                                <h3>Corpo</h3>
+                            
+                                <div class="microMacroCategorie" id="microCorpo">
+                                    <button class="microCategorie" id="microCategorie">anticellulite e rassodanti</button>
+                                    <button class="microCategorie" id="microCategorie">scrub corpo</button>
+                                    <button class="microCategorie" id="microCategorie">Profumi e acqua profumate</button>
+                                    <button class="microCategorie" id="microCategorie">Bagnodoccia</button>
+                                    <button class="microCategorie" id="microCategorie">Creme corpo </button>
+                                    <button class="microCategorie" id="microCategorie">Solari</button>
+                                    <button class="microCategorie" id="microCategorie">Prodotti per capelli</button>
+                                    <button class="microCategorie" id="microCategorie">repellenti per insetti</button>
+                                    <button class="microCategorie" id="microCategorie">Cosmetica solida</button>
+                                    <button class="microCategorie" id="microCategorie">Prodotti per bambini</button>
+                                    <button class="microCategorie" id="microCategorie">Igiene intima</button>
+                                </div>
+    
+                            </div>
+                            <div class="micro-macroCategoria">    
+                                <h3>Capelli</h3>
+    
+                                <div class="microMacroCategorie" id="microCapelli">
+                                    <button class="microCategorie" id="microCategorie">Maschere, balsami e scrub</button>
+                                    <button class="microCategorie" id="microCategorie">Shampoo</button>
+                                    <button class="microCategorie" id="microCategorie">tinture per capelli</button>
+                                    <button class="microCategorie" id="microCategorie">sieri e lozioni protettive</button>
+                                    <button class="microCategorie" id="microCategorie">styling</button>
+                                    <button class="microCategorie" id="microCategorie">trattamenti curativi</button>
+                                </div>
+                
+                            </div>       
                     </div>
-                       
-
                 </div>
+
+                
+
+
+
+
+
+
+
+
+
 
                 <div class="prodotti-pagination-container">
 
-                    <div class="tools-navbar-prodotti-container">
-
-                        <p id="categoria-attiva">>  Tradizione-erboristica</p>
-
-                        <div class="search-bar">
-                            <input id="search-field" type="text" class="search-field" placeholder="Cerca prodotti...">
-                            <button id="search-btn" class="search-btn"><img src="includes/img/ricerca.png" alt=""></button>
-                        </div>
-                        
-                    </div>
-
+                   
                     <div class="prodotti-container" id="product-list">
                         <!-- Dynamically added with js-->
                     </div>
@@ -329,6 +388,36 @@
             </div>
             
         </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- News Section -->
         <section id="News">

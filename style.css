@@ -10,6 +10,7 @@
     --contrast-dark-color: rgb(255, 132, 152);
     --contrast-color: pink;
     --text-color: #EEEEEE;
+    --text-two-color: rgb(236, 236, 236);
 
     --main-color: rgb(197, 64, 133);
 }
@@ -454,6 +455,7 @@ section{
 /* Sezione Prodotti */
 #Prodotti{
     height: 1650px;
+    background-color: var(--bg-color);
 }
 .prodotti-title{
     color: var(--bg-color);
@@ -474,180 +476,199 @@ section{
     margin-bottom: 3rem;
 }
 .prodotti-categorie-container{
-    width: 98%;
     height: 1500px;
-    margin: 1%;
-    margin-top: -2rem;
-    display: flex;
-    border: 1px solid var(--lighter-color);
-}
-.categorie-container h4{
-    margin-top: 2.5rem;
-    height: 2.5rem;
-    text-align: center;
-}
-
-
-
-
-
-
-.categorie-container {
-    width: 15rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: var(--bg-color);
-    border-right: 1px solid var(--lighter-color);
-}
-.microCategorie-div,
-.micro-macroCategorie {
-    width: 100%;
-    margin: 2px auto;
-    height: 4rem;
-    border: none;
-    border-bottom: 1px solid grey;
-    display: flex;
-}
-
-.microCategorie-div button,
-.micro-macroCategorie button{
-    width: 85%;
-    border: none;
-    color: var(--lighter-color);
-    background-color: var(--bg-color);
-}
-.microCategorie-div p ,
-.micro-macroCategorie p{
-    color: var(--lighter-color);
-    width: 15%;
-    background-color: var(--bg-color);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-
-
-.microCategorieTradizione,
-.microCategorieIdee,
-.microCategorieAlimentazione,
-.microCategorieIntegratori,
-.microCategorieCosmetici{
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease; 
-    flex-direction: column;
-}
-.microCategorieTradizione.active,
-.microCategorieAlimentazione.active{
-    max-height: 500px; 
-    opacity: 1;
-    transform: translateY(0);
-}
-.microCategorieIdee.active{
-    max-height: 700px; 
-    opacity: 1;
-    transform: translateY(0);
-}
-.microCategorieIntegratori.active{
-    max-height: 900px; 
-    opacity: 1;
-    transform: translateY(0);
-}
-.microCategorieCosmetici.active {
-    max-height: 1200px; 
-    opacity: 1;
-    transform: translateY(0);
-}
-.microCategorie{
-    width: 100%;
-    height: 3rem;
-    border: none;
-    background-color: rgba(133, 206, 32,0.1);
-    color: var(--dark-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    border-bottom: 1px solid var(--lighter-color);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.prodotti-pagination-container{
-    width: 90%;
-    height: 90%;
 }
 .tools-navbar-prodotti-container{
     background-color: rgb(236, 236, 236);
-    height: 4rem;
+    height: 5rem;
+    margin-top: -2.8rem;
     display: flex;
+    position: relative;
 }
 #categoria-attiva{
-    width: 20rem;
-    height: 4rem;
-    padding: 20px;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    margin-left: 1.5rem;
+    align-items: center;
     color: var(--lighter-color);
 }
-.search-field{
-    height: 2.5rem;
-    width: 40rem;
-    margin-top: 0.6rem;
-    margin-left: 5rem;
-    padding: 20px;
-    border-radius: 25px;
-    border: 1px solid var(--lighter-color);
-    outline-color: var(--dark-color);
-    font-size: 18px;
+.categorie-nav-bar-container{
+    display: flex;
+    width: 70%;
+}
+.search-bar{
+    height: 100%;
+    width: 15%;
+    position: relative;
 }
 .search-btn{
     border: none;
-    margin-left: -2.8rem;
-    margin-top: -1rem;
-    width: 30px;
-    height: 30px;
-    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
+    background-color: rgb(236, 236, 236);
 }
 .search-btn:hover{
     transform: scale(1.1);
 }
 .search-btn img{
+    width: 40px;
+    height: 40px;
+}
+.macroCategorie-div{
+    height: 100%;
+    width: 16.5rem;
+}
+.macroCategorie-div button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    color: var(--lighter-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.macroCategorie-div p img{
+    width: 18px;
+    height: 18px;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+} 
+.microCategorie-container{
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    position: absolute;
+    top: 5rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px var(--lighter-color);
+}
+.microCategorie{
+    padding: 10px;
+    margin: 1rem;
+    border: none;
+    background-color: rgb(230, 230, 230);
+    color: var(--dark-color);
+}
+.microCategorie:hover{
+    color: var(--lighter-color);
+}
+.microMacroCategorie-container{
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    position: absolute;
+    top: 5rem;
+    height: 35rem;
+    display:  none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px var(--lighter-color);
+}
+.micro-macroCategoria{
+    width: 30%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.micro-macroCategoria h3{
+    text-align: center;
+    font-size: 20px;
+    color: var(--lighter-color);
+    font-weight: bold;
+}
+.microMacroCategorie{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.microCategorie-container.active {
+    display: grid; 
+}
+.macroCategorie.active {
+    background-color: rgb(230, 230, 230);
+}
+.macroCategorie{
+    background-color: rgb(236, 236, 236);
+}
+.microCategorie.active{
+    display: grid;
+}
+#microCosmetici.active {
+    display: flex;
+}
+.search-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgb(236, 236, 236);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.search-field{
+    width: 50rem;
+    height: 2.5rem;
+    border: none;
+    border-bottom: 1px solid var(--lighter-color);
+    outline-color: var(--lighter-color);
+    position: absolute;
+    left: 50%;
+    top: 1.5rem;
+    transform: translate(-50%);
+    padding: 20px;
+}
+.close-search-modal{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 4rem;
+    height: 2.5rem;
+    border: none;
+    font-size: 28px;
+    background-color: rgb(236, 236, 236);
+}
+.close-search-modal:hover{
+    transform: scale(1.2);
+}
+.search-btn-modal{
+    border: none;
+    position: absolute;
+    left: 27%;
+    top: 1.8rem;
+    background-color: rgb(236, 236, 236);
+}
+.search-btn-modal img{
     width: 30px;
     height: 30px;
 }
+.search-btn-modal:hover{
+    transform: scale(1.1);
+}
+.prodotti-pagination-container{
+    width: 100%;
+    height: 90%;
+}
 .prodotti-container {
+    margin-top: 2rem;
     height: 80rem;
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(6, 16.5%);
 }
 .products {
     border: 1px solid lightgrey;
     margin: 8px auto;
     width: 18rem;
-    height: 400px;
+    height: 420px;
 }
 .products img {
-    width: 220px;
-    height: 260px;
-    margin-left: 2.5rem;
+    width: 240px;
+    height: 280px;
+    margin-left: 1.5rem;
     margin-top: 1rem;
 }
 .products-description {
