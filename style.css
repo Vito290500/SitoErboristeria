@@ -165,6 +165,7 @@ main section p{
 section{
     width: 100%;
     height: 950px;
+    background-color: var(--bg-color);
 }
 
 
@@ -298,6 +299,7 @@ section{
     margin-top: -5rem;
     position: relative;
     height: 103.125rem;
+    background-color: var(--bg-color);
 }
 #Offerte h1{
     margin-top: -1rem;
@@ -621,6 +623,7 @@ section{
     top: 1.5rem;
     transform: translate(-50%);
     padding: 20px;
+    border-radius: 10px;
 }
 .close-search-modal{
     position: absolute;
@@ -643,8 +646,8 @@ section{
     background-color: rgb(236, 236, 236);
 }
 .search-btn-modal img{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 .search-btn-modal:hover{
     transform: scale(1.1);
@@ -727,10 +730,43 @@ section{
     font-size: 18px;
     color: white;
 }
-
-
-
-
+.custom-alert {
+    display: none;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  
+    z-index: 1000; 
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+.custom-alert-content {
+    background-color: var(--bg-color);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.close-alert {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.close-alert:hover {
+    background-color: #45a049;
+}
+#alertMessage{
+    color: grey;
+}
 
 
 
@@ -884,71 +920,98 @@ section{
 
 /* Chi siamo Section */
 #ChiSiamo{
-    background: linear-gradient(to right, var(--dark-color), var(--lighter-color));
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 1100px;
+    height: 1000px; 
 }
-.container-one{
-    display: flex;
-    width: 90%;
-    height: 50%;
-    margin: auto;
-    justify-content: space-between;
-}
-.container-one img{
-    width: 30%;
-    height: 450px;
-    margin: auto;
-}
-.container-one-description{
-    width: 50%;
-    margin: auto;
-}
-.container-one h3{
-    color: var(--contrast-color);
-    font-size: 30px;
-}
-.container-one p{
-    color: var(--text-color);
+.chi-siamo-title{
+    color: var(--bg-color);
+    font-style: italic;
+    text-align: center;
     font-size: 20px;
-}
-
-
-
-
-
-
-
-
-
-.container-two{
+    height: 3.2rem;
+    background-color: var(--lighter-color);
+    margin-top: -1rem;
     display: flex;
-    width: 90%;
-    height: 50%;
-    margin: auto;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
-.container-two img{
-    margin: auto;
-    width: 20%;
-    height: 450px;
+.imagePresentationContainer{
+    height: 100%;
+    background-color: yellow;
+    width: 100%;
+    position: relative;
+    margin-top: -0.48rem;
 }
-.container-two-description{
-    width: 50%;
-    margin: auto;
+.chiSiamoImage{
+    background-image: url(https://lh5.googleusercontent.com/p/AF1QipPnexzaUKG2zonrvmXs7GF-27VBdNWzuANKxFee=w618-h500-k-no);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 30% 30%;
+    width: 101%;
+    height: 100%;
+    filter: blur(4px);
+    position: absolute;
+    left: -0.1rem;
 }
-.container-two h3{
+.imageBackdrop{ 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: -0.1rem;
+    left: 0;
+}  
+.ChiSiamoDescription{
+    z-index: 10;
+    position: absolute;
+    top: 15rem;
+    left: 10rem;
+    width: 31.25rem;
+}
+.ChiSiamoDescription h3{
+    font-size: 35px;
+    font-style: italic;
+    color: var(--contrast-dark-color);
+}
+.ChiSiamoDescription p{
+    margin-top: 1rem;
+    font-size: 18px;
+}
+.ChiSiamoDescription button{
+    margin-top: 1rem;
+    margin-left: 0.2rem;
+    text-decoration: none;
+    text-align: center;
+    width: 49%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    height: 2.8rem;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
     color: var(--contrast-color);
-    font-size: 30px;
+    border: 1px solid var(--contrast-color);
+    transition: color 0.4s ease; 
+    animation: fade-in 4s;
 }
-.container-two p{
-    color: var(--text-color);
-    font-size: 20px;
+.ChiSiamoDescription button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background-color: var(--contrast-color);
+    transition: left 0.4s ease; 
+    z-index: -1; 
 }
-
-
+.ChiSiamoDescription button:hover::before {
+    left: 0; 
+}
+.ChiSiamoDescription button:hover {
+    color: var(--text-color); 
+    cursor: pointer;
+}
 
 
 
