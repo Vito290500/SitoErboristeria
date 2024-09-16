@@ -136,18 +136,47 @@ function rendereCategoria() {
         productDiv.classList.add("products");
         
         productDiv.innerHTML = `
+            <div class="prodotti-backdrop"></div>
+            
             <img src="${prodotti[i]['immagine']}" alt="">
             <div class="products-description">
-                <h3>${prodotti[i]['nome']}</h3>
+                <h3>${prodotti[i]['nome']}</h3>  
                 <p class="categoria-prodotto">${prodotti[i]['categoria']}</p>
-                <div class="disponibilità">
-                    <p class="prezzo">prezzo: ${prodotti[i]['prezzo']}€</p>
-                    <p class="sconto">${prodotti[i]['promo']}</p>
+                <p class="prodotto-descrizione">${prodotti[i]['descrizione']}</p>
+    
+                <div class="prezzo-container-div">
+                    <p class="prezzo">prezzo: <span class="prezzo-detail">${prodotti[i]['prezzo']}€</span></p>
+                    <button class="prodotto-btn" data-whatsapp-number="393402122842" 
+                            data-prefill-message="Salve, vorrei ordinare il prodotto: ${prodotti[i]['nome']}">
+                        ordina
+                    </button>
                 </div>
             </div>
         `;
         ProdottiContainer.appendChild(productDiv);
     }
+    
+    // Add event listeners after appending the productDiv
+    document.querySelectorAll('.prodotto-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            event.stopPropagation(); 
+    
+            // Get the WhatsApp number and prefill message
+            const whatsappNumber = this.getAttribute('data-whatsapp-number');
+            const message = this.getAttribute('data-prefill-message');
+            
+            // Encode the message to make it URL-safe
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Build the WhatsApp link without the + sign in the number
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // Redirect to WhatsApp
+            window.location.href = whatsappLink;
+        });
+    });
+    
     setupPagination(); 
 }
 function setupPagination() {
@@ -240,6 +269,8 @@ const ideeCategoria = document.getElementById('Idee-regalo-ed-oggettistica');
 const alimentazioneCategoria = document.getElementById('Alimentazione-Naturale');
 const integratoriCategoria = document.getElementById('Integratori-Naturali');
 const comesticiCategoria = document.getElementById('Cosmetici-e-cura-della-persona');
+const outletCategoria = document.getElementById('Outlet');
+
 
 tradizioneCategoria.addEventListener('click', () => {
     currentCategory = 'Tradizione erboristica';  
@@ -271,7 +302,12 @@ comesticiCategoria.addEventListener('click', () => {
     rendereCategoria(); 
     categoriaAttiva.textContent = "> " + currentCategory;
 });
-
+outletCategoria.addEventListener('click', () => {
+    currentCategory = 'Prodotti in sconto'; 
+    currentPage = 1;  
+    rendereCategoria(); 
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
 
 
 
@@ -279,14 +315,24 @@ comesticiCategoria.addEventListener('click', () => {
 // MICROCATEGORIE
 const microCategorieList = document.querySelectorAll('.microCategorie');
 var datiProdottiForMicroCat = {};
-const listOfMacro = ['Tradizione erboristica','Idee regalo ed oggettistica', 'Alimentazione naturale','Integratori Naturali','Cosmetici e cura della persona']
+const listOfMacro = ['Tradizione erboristica','Idee regalo ed oggettistica', 'Alimentazione naturale','Integratori Naturali','Cosmetici e cura della persona', 'Prodotti in sconto']
 let microCurrentCategory = '';
 let currentMicroCatPage = 1;
 const itemsPerMicroCatPage = 18;
 
 function renderCheck(){
     ProdottiContainer.innerHTML = "";
-    categoriaAttiva.textContent = "> " + microCurrentCategory;
+
+    if(microCurrentCategory.includes("sconti")){
+        
+        let updatedword = microCurrentCategory.replace("sconti", " ")
+        
+        categoriaAttiva.innerHTML = "> " + updatedword + "<span>sconti</span>";
+    }
+    else{
+        categoriaAttiva.textContent = "> " + microCurrentCategory;
+       
+    }
 
     const filteredProducts = [];
     for (const macro of listOfMacro) {
@@ -306,23 +352,31 @@ function renderCheck(){
     for (let i = startIndex; i < endIndex; i++) {
         const prodotto = filteredProducts[i];
 
+
         const productDiv = document.createElement("div");
         productDiv.classList.add("products");
 
         productDiv.innerHTML = `
-            <img src="${prodotto['immagine']}" alt="">
+
+            <div class="prodotti-backdrop"></div>
+            
+            <img src="${prodotto[i]['immagine']}" alt="">
             <div class="products-description">
-                <h3>${prodotto['nome']}</h3>
-                <p class="categoria-prodotto">${prodotto['categoria']}</p>
-                <div class="disponibilità">
-                    <p class="prezzo">prezzo: ${prodotto['prezzo']}€</p>
-                    <p class="sconto">${prodotto['promo']}</p>
+                <h3>${prodotto[i]['nome']}</h3>  
+                <p class="categoria-prodotto">${prodotto[i]['categoria']}</p>
+                <p class="prodotto-descrizione">${prodotto[i]['descrizione']}</p>
+
+                <div class="prezzo-container-div">
+                    <p class="prezzo">prezzo: <span class="prezzo-detail">${prodotto[i]['prezzo']}€</span></p>
+                    <button class="prodotto-btn" refer="${prodotto[i]['nome']}">ordina</button>
                 </div>
+                
             </div>
         `;
 
         ProdottiContainer.appendChild(productDiv);
     }
+
     setupMicroPagination(filteredProducts.length);  
 }
 function setupMicroPagination(totalItems) {
@@ -407,7 +461,10 @@ function caricaDatiMicroCat() {
 }
 microCategorieList.forEach(microCatBtn => {
     microCatBtn.addEventListener('click', function () {
+
+       
         microCurrentCategory = microCatBtn.textContent;
+    
         caricaDatiMicroCat();
     });
 });
@@ -449,10 +506,6 @@ modalBtns.forEach(modalBtn => {
 
     modalBtn.addEventListener('mouseover', openModal);
 });
-
-
-
-
 
 
 
@@ -584,14 +637,19 @@ function searchProducts() {
         productDiv.classList.add("products");
 
         productDiv.innerHTML = `
-            <img src="${prodotto['immagine']}" alt="">
+            <div class="prodotti-backdrop"></div>
+            
+            <img src="${prodotto[i]['immagine']}" alt="">
             <div class="products-description">
-                <h3>${prodotto['nome']}</h3>
-                <p class="categoria-prodotto">${prodotto['categoria']}</p>
-                <div class="disponibilità">
-                    <p class="prezzo">prezzo: ${prodotto['prezzo']}€</p>
-                    <p class="sconto">${prodotto['promo']}</p>
+                <h3>${prodotto[i]['nome']}</h3>  
+                <p class="categoria-prodotto">${prodotto[i]['categoria']}</p>
+                <p class="prodotto-descrizione">${prodotto[i]['descrizione']}</p>
+
+                <div class="prezzo-container-div">
+                    <p class="prezzo">prezzo: <span class="prezzo-detail">${prodotto[i]['prezzo']}€</span></p>
+                    <button class="prodotto-btn" refer="${prodotto[i]['nome']}">ordina</button>
                 </div>
+                
             </div>
         `;
         ProdottiContainer.appendChild(productDiv);
@@ -631,7 +689,3 @@ searchBtn.addEventListener('click', showModal)
 
 
 
-
-
-
-// News Section

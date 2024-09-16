@@ -24,6 +24,13 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Pacifico&family=Yellowtail&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <!-- Backdrop Mobile Nav View -->
@@ -44,7 +51,7 @@
     <header>
         <nav class="navBar">
             <div class="nav__title">
-                <a href="#">l'Herborista</a>
+                <a href="#">L'Herborista</a>
             </div>
             
             <ul class="nav__items">
@@ -171,15 +178,17 @@
                     <div class="categorie-nav-bar-container">
     
                         <!-- Macro Categorie Tradizioni -->
-                        <div class="macroCategorie-div">
-                            <button class="macroCategorie" id="TradizioneErboristica">Tradizione erboristica
+                        <div class="macroCategorie-div" id="tradDiv">
+                            <button class="macroCategorie" id="TradizioneErboristica">
+                                Tradizione erboristica
                                 <p class="modal-btn" refer="microTradizione" refertwo="TradizioneErboristica">
-                                    <img src="includes/img/freccia.png" alt=""></p>
+                                    <img src="includes/img/freccia.png" alt="">
+                                </p>
                             </button>       
-                        </div>      
+                        </div>
                     
                         <!-- Macro Categorie Idee  -->
-                        <div class="macroCategorie-div">
+                        <div class="macroCategorie-div" id="ideeDiv">
                             <button class="macroCategorie" id="Idee-regalo-ed-oggettistica">Idee regalo ed oggettistica
                                 <p class="modal-btn" refer="microIdee" refertwo="Idee-regalo-ed-oggettistica">
                                     <img src="includes/img/freccia.png" alt=""></p>
@@ -188,7 +197,7 @@
                         </div>          
                       
                         <!-- Macro Categorie Alimentazione -->
-                        <div class="macroCategorie-div">
+                        <div class="macroCategorie-div" id="aliDiv">
                             <button class="macroCategorie" id="Alimentazione-Naturale">Alimentazione Naturale
                                 <p class="modal-btn" refer="microAlimentazione" refertwo="Alimentazione-Naturale">
                                     <img src="includes/img/freccia.png" alt="">
@@ -198,7 +207,7 @@
                         </div>
                         
                         <!-- Macro Categorie Integratori naturali -->
-                        <div class="macroCategorie-div">
+                        <div class="macroCategorie-div" id="inteDiv">
                             <button class="macroCategorie" id="Integratori-Naturali" >Integratori Naturali
                                 <p class="modal-btn" refer="microIntegratori" refertwo="Integratori-Naturali">
                                     <img src="includes/img/freccia.png" alt="">
@@ -208,14 +217,21 @@
                         </div>
 
                         <!-- Macro Categorie Cosmetici -->
-                        <div class="macroCategorie-div">    
+                        <div class="macroCategorie-div" id="cosmDiv">    
                             <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">Cosmetici e cura della persona
                                 <p class="modal-btn" refer="microCosmetici" refertwo="Cosmetici-e-cura-della-persona">
                                     <img src="includes/img/freccia.png" alt="">
                                 </p>
                             </button>
-                            
                         </div>
+
+                        <!-- Macro Categorie Outlet -->
+                        <div class="macroCategorie-div" id="outDiv">
+                            <button class="macroCategorie" id="Outlet">Prodotti in sconto
+                                <p class="modal-btn" refer="microOutlet" refertwo="Outlet">
+                                    <img src="includes/img/freccia.png" alt=""></p>
+                            </button>       
+                        </div>  
                            
                     </div>
 
@@ -333,6 +349,21 @@
                 
                             </div>       
                     </div>
+
+                    <!-- Micro Categorie Outlet -->
+                    <div class="microCategorie-outlet-container" id="microOutlet">
+
+                        <h3>Prodotti Scontati fino ad esaurimento scorte</h3>
+
+                        <div class="outletContainer-Micro">
+                            <button class="microCategorie" id="microCategorieOutlet">Tradizione erboristica<span> sconti</span></button>
+                            <button class="microCategorie" id="microCategorieOutlet">Idee regalo ed oggettistica<span> sconti</span></button>
+                            <button class="microCategorie" id="microCategorieOutlet">Alimentazione naturale<span> sconti</span></button>
+                            <button class="microCategorie" id="microCategorieOutlet">Integratori naturali<span> sconti</span></button>
+                            <button class="microCategorie" id="microCategorieOutlet">Cosmetici e cura della pelle<span> sconti</span></button>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="prodotti-pagination-container">
@@ -468,23 +499,6 @@
 
         </section>
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!-- Chi siamo Section -->
         <section id="ChiSiamo">
 
@@ -505,7 +519,6 @@
 
         </section>
         
-
         <!-- Contact Me Section -->
         <section id="VieniATrovarci">
 
@@ -626,10 +639,7 @@
                 <p class="Copyright">Copyright @2024 All rights reserved | This website was made by <a href="https://vito290500.github.io/SitoPortfolio/">Vito Di Venosa</a></p>
         </footer> 
         </section>
-        
-   
-
-
+    
     </main>
 
 
