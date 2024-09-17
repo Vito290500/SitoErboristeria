@@ -4,31 +4,36 @@
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         },
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         }, 
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         },   
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         },  
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         }  
     ],
     "prodottiScontati":[
@@ -36,32 +41,37 @@
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         },
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         }, 
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         },   
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
         },  
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
-            "descrizione" : "piccola descrizione"
-        }  
+            "descrizione" : "piccola descrizione",
+            "prezzo": "18.99"
+        } 
     ]
 }
 

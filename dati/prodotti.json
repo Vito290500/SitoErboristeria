@@ -199,27 +199,37 @@
                 "nome": "vitamida b",
                 "descrizione": "oggettistica",
                 "microcategoria": "Tradizione erboristica sconti",
-                "immagine": "dati/immaginiProdotti/vitamina.jpg"
+                "immagine": "dati/immaginiProdotti/vitamina.jpg",
+                "sconto": "10%",
+                "prezzo originale": "18.99"
             }, {
                 "nome": "vitamida b",
                 "descrizione": "oggettistica",
                 "microcategoria": "Idee regalo ed oggettistica sconti",
-                "immagine": "dati/immaginiProdotti/vitamina.jpg"
+                "immagine": "dati/immaginiProdotti/vitamina.jpg",
+                "sconto": "10%",
+                "prezzo originale": "18.99"
             }, {
                 "nome": "vitamida b",
                 "descrizione": "oggettistica",
                 "microcategoria": "Integratori Naturali sconti",
-                "immagine": "dati/immaginiProdotti/vitamina.jpg"
+                "immagine": "dati/immaginiProdotti/vitamina.jpg",
+                "sconto": "10%",
+                "prezzo originale": "18.99"
             }, {
                 "nome": "vitamida b",
                 "descrizione": "oggettistica",
                 "microcategoria": "Cosmetici e cura della persona sconti",
-                "immagine": "dati/immaginiProdotti/vitamina.jpg"
+                "immagine": "dati/immaginiProdotti/vitamina.jpg",
+                "sconto": "10%",
+                "prezzo originale": "18.99"
             }, {
                 "nome": "vitamida b",
                 "descrizione": "oggettistica",
                 "microcategoria": "Alimentazione naturale sconti",
-                "immagine": "dati/immaginiProdotti/vitamina.jpg"
+                "immagine": "dati/immaginiProdotti/vitamina.jpg",
+                "sconto": "10%",
+                "prezzo originale": "18.99"
             }
     ]
     

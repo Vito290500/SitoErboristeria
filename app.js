@@ -28,6 +28,18 @@ CloseMenuBtn.addEventListener('click', close);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // Prodotti Consigliati Section
 let datiProdottiConsigliati = {};
 const ProdottiConsigliatiContainer = document.getElementById('prodotti-consigliati-list');
@@ -42,23 +54,46 @@ function  renderProdottiConsigliati(){
         const productDiv = document.createElement("div");
         productDiv.classList.add("item-consigliato");
 
-
         productDiv.innerHTML = `
             <div id="backdrop"></div>
-
-            <img src="${datiProdottiConsigliati['prodottiConsigliati'][el]['immagine']}" alt="">
-   
+            <p class="tag">New</p>
+            <img class="hover-img" src="${datiProdottiConsigliati['prodottiConsigliati'][el]['immagine']}" alt="">
+        
             <div class="item-consigliato-description">
                 <h3>${datiProdottiConsigliati['prodottiConsigliati'][el]['nome']}</h3>
                 <p class="categoria">${datiProdottiConsigliati['prodottiConsigliati'][el]['categoria']}</p>
                 <p>${datiProdottiConsigliati['prodottiConsigliati'][el]['descrizione']}</p>
-                <button onclick="window.location.href='#Prodotti';">Scopri altri prodotti simili</button>
+                
+            </div>
+
+            <div class="footerProducts">
+
+                <button class="ordina-btn" data-whatsapp-number="393914393426" 
+                            data-prefill-message="Salve, vorrei ordinare il prodotto: ${datiProdottiConsigliati['prodottiConsigliati'][el]['nome']}">
+                        ordina
+                </button>
+                <p>${datiProdottiConsigliati['prodottiConsigliati'][el]['prezzo']} €</p>
             </div>
 
         `;
 
         ProdottiConsigliatiContainer.appendChild(productDiv);
     }
+    document.querySelectorAll('.ordina-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            event.stopPropagation(); 
+    
+            const whatsappNumber = this.getAttribute('data-whatsapp-number');
+            const message = this.getAttribute('data-prefill-message');
+            
+            const encodedMessage = encodeURIComponent(message);
+            
+            const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            window.location.href = whatsappLink;
+        });
+    });
 }
 function  renderProdottiScontati(){
 
@@ -67,7 +102,7 @@ function  renderProdottiScontati(){
     for(const el in datiProdottiConsigliati['prodottiScontati']){
 
         const productDiv = document.createElement("div");
-        productDiv.classList.add("item-consigliato");
+        productDiv.classList.add("item-scontato");
 
 
         productDiv.innerHTML = `
@@ -110,6 +145,23 @@ caricaDatiOfferteLampo()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Prodotti Section
 
 // CATEGORIE
@@ -135,7 +187,37 @@ function rendereCategoria() {
         const productDiv = document.createElement("div");
         productDiv.classList.add("products");
         
-        productDiv.innerHTML = `
+        if(String(currentCategory) == "Prodotti in sconto"){ 
+            
+            let Sconto = (parseInt(prodotti[i]['prezzo originale']) * parseInt(prodotti[i]['sconto'])) / 100;
+            let prezzoScontato = parseInt(parseInt(prodotti[i]['prezzo originale']) - Sconto) - 0.01
+        
+            productDiv.innerHTML = `
+            <div class="prodotti-backdrop"></div>
+            <p class="sconto-prodotto">Sconto del ${prodotti[i]['sconto']}</p>
+            <img src="${prodotti[i]['immagine']}" alt="">
+            <div class="products-description">
+                <h3>${prodotti[i]['nome']}</h3> 
+
+                <p class="categoria-prodotto">${prodotti[i]['categoria']}</p>
+                <p class="prodotto-descrizione">${prodotti[i]['descrizione']}</p>
+
+                <div class="prezzo-container-div">
+
+                    <div class="prezzo-container">  
+                        <p class="prezzo-originale">prezzo: <span class="sbarrato">${prodotti[i]['prezzo originale']}€</span></p>
+                        <p class="prezzo-scontato"> ${prezzoScontato}€</p>
+                    </div>
+
+                    <button class="prodotto-btn" data-whatsapp-number="393914393426" 
+                            data-prefill-message="Salve, vorrei ordinare il prodotto: ${prodotti[i]['nome']}">
+                        ordina
+                    </button>
+                </div>
+            </div>
+        `;
+        }else{
+            productDiv.innerHTML = `
             <div class="prodotti-backdrop"></div>
             
             <img src="${prodotti[i]['immagine']}" alt="">
@@ -153,26 +235,22 @@ function rendereCategoria() {
                 </div>
             </div>
         `;
+        }
         ProdottiContainer.appendChild(productDiv);
     }
     
-    // Add event listeners after appending the productDiv
     document.querySelectorAll('.prodotto-btn').forEach(button => {
         button.addEventListener('click', function(event) {
             event.preventDefault(); 
             event.stopPropagation(); 
     
-            // Get the WhatsApp number and prefill message
             const whatsappNumber = this.getAttribute('data-whatsapp-number');
             const message = this.getAttribute('data-prefill-message');
             
-            // Encode the message to make it URL-safe
             const encodedMessage = encodeURIComponent(message);
             
-            // Build the WhatsApp link without the + sign in the number
             const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
             
-            // Redirect to WhatsApp
             window.location.href = whatsappLink;
         });
     });
@@ -270,7 +348,9 @@ const alimentazioneCategoria = document.getElementById('Alimentazione-Naturale')
 const integratoriCategoria = document.getElementById('Integratori-Naturali');
 const comesticiCategoria = document.getElementById('Cosmetici-e-cura-della-persona');
 const outletCategoria = document.getElementById('Outlet');
-
+const outletNavBar = document.getElementById('OutletLinkage');
+const prodottiNavBar = document.getElementById('ProdottiLinkage');
+const scopriBtn = document.getElementById('scopri');
 
 tradizioneCategoria.addEventListener('click', () => {
     currentCategory = 'Tradizione erboristica';  
@@ -308,6 +388,32 @@ outletCategoria.addEventListener('click', () => {
     rendereCategoria(); 
     categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
 });
+outletNavBar.addEventListener('click', () => {
+    currentCategory = 'Prodotti in sconto'; 
+    currentPage = 1;  
+    rendereCategoria(); 
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
+prodottiNavBar.addEventListener('click', () => {
+    currentCategory = 'Tradizione erboristica'; 
+    currentPage = 1;  
+    rendereCategoria(); 
+    categoriaAttiva.innerHTML = "> " + currentCategory;
+});
+scopriBtn.addEventListener('click', () => {
+    currentCategory = 'Prodotti in sconto'; 
+    currentPage = 1;  
+    rendereCategoria(); 
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -321,7 +427,10 @@ let currentMicroCatPage = 1;
 const itemsPerMicroCatPage = 18;
 
 function renderCheck(){
+
     ProdottiContainer.innerHTML = "";
+
+    console.log(microCurrentCategory)
 
     if(microCurrentCategory.includes("sconti")){
         
@@ -335,6 +444,7 @@ function renderCheck(){
     }
 
     const filteredProducts = [];
+    
     for (const macro of listOfMacro) {
         if (!datiProdottiForMicroCat[macro]) continue;
 
@@ -356,27 +466,56 @@ function renderCheck(){
         const productDiv = document.createElement("div");
         productDiv.classList.add("products");
 
-        productDiv.innerHTML = `
 
-            <div class="prodotti-backdrop"></div>
+        if(String(microCurrentCategory).includes('sconti')){ 
             
-            <img src="${prodotto[i]['immagine']}" alt="">
+            let Sconto = (parseInt(prodotto['prezzo originale']) * parseInt(prodotto['sconto'])) / 100;
+            let prezzoScontato = parseInt(parseInt(prodotto['prezzo originale']) - Sconto) - 0.01
+        
+            productDiv.innerHTML = `
+            <div class="prodotti-backdrop"></div>
+            <p class="sconto-prodotto">Sconto del ${prodotto['sconto']}</p>
+            <img src="${prodotto['immagine']}" alt="">
             <div class="products-description">
-                <h3>${prodotto[i]['nome']}</h3>  
-                <p class="categoria-prodotto">${prodotto[i]['categoria']}</p>
-                <p class="prodotto-descrizione">${prodotto[i]['descrizione']}</p>
+                <h3>${prodotto['nome']}</h3> 
+
+                <p class="categoria-prodotto">${prodotto['categoria']}</p>
+                <p class="prodotto-descrizione">${prodotto['descrizione']}</p>
 
                 <div class="prezzo-container-div">
-                    <p class="prezzo">prezzo: <span class="prezzo-detail">${prodotto[i]['prezzo']}€</span></p>
-                    <button class="prodotto-btn" refer="${prodotto[i]['nome']}">ordina</button>
+
+                    <div class="prezzo-container">  
+                        <p class="prezzo-originale">prezzo: <span class="sbarrato">${prodotto['prezzo originale']}€</span></p>
+                        <p class="prezzo-scontato"> ${prezzoScontato}€</p>
+                    </div>
+
+                    <button class="prodotto-btn" data-whatsapp-number="393914393426" 
+                            data-prefill-message="Salve, vorrei ordinare il prodotto: ${prodotto['nome']}">
+                        ordina
+                    </button>
                 </div>
-                
             </div>
         `;
+        }else{
+            productDiv.innerHTML = `
+            <div class="prodotti-backdrop"></div>
+            <img src="${prodotto['immagine']}" alt="">
+            <div class="products-description">
+                <h3>${prodotto['nome']}</h3>  
+                <p class="categoria-prodotto">${prodotto['categoria']}</p>
+                <p class="prodotto-descrizione">${prodotto['descrizione']}</p>
+                <div class="prezzo-container-div">
+                    <p class="prezzo">prezzo: <span class="prezzo-detail">${prodotto['prezzo']}€</span></p>
+                    <button class="prodotto-btn" refer="${prodotto['nome']}">ordina</button>
+                </div>
+            </div>
+        `;
+        }
+
+       
 
         ProdottiContainer.appendChild(productDiv);
     }
-
     setupMicroPagination(filteredProducts.length);  
 }
 function setupMicroPagination(totalItems) {
@@ -452,7 +591,8 @@ function caricaDatiMicroCat() {
       })
       .then(dati => {
         datiProdottiForMicroCat = dati;
-        currentMicroCatPage = 1;  // Reset to the first page when loading new data
+        currentMicroCatPage = 1;  
+        
         renderCheck();
       })
       .catch(error => {
@@ -462,7 +602,6 @@ function caricaDatiMicroCat() {
 microCategorieList.forEach(microCatBtn => {
     microCatBtn.addEventListener('click', function () {
 
-       
         microCurrentCategory = microCatBtn.textContent;
     
         caricaDatiMicroCat();
@@ -506,6 +645,50 @@ modalBtns.forEach(modalBtn => {
 
     modalBtn.addEventListener('mouseover', openModal);
 });
+
+
+
+
+const cat1Offerte = document.getElementById('Tradizione');
+const cat2Offerte = document.getElementById('Idee');
+const cat3Offerte = document.getElementById('Alimentazione');
+const cat4Offerte = document.getElementById('Integratori');
+const cat5Offerte = document.getElementById('Cosmetici');
+
+cat1Offerte.addEventListener('click', () => {
+    microCurrentCategory = 'Tradizione erboristica sconti'; 
+    currentPage = 1;  
+    caricaDatiMicroCat(); 
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
+cat2Offerte.addEventListener('click', () => {
+    microCurrentCategory = 'Idee regalo ed oggettistica sconti'; 
+    currentPage = 1;  
+    caricaDatiMicroCat();  
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
+cat3Offerte.addEventListener('click', () => {
+    microCurrentCategory = 'Integratori Naturali sconti'; 
+    currentPage = 1;  
+    caricaDatiMicroCat();  
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
+cat4Offerte.addEventListener('click', () => {
+    microCurrentCategory = 'Alimentazione naturale sconti'; 
+    currentPage = 1;  
+    caricaDatiMicroCat();  
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
+cat5Offerte.addEventListener('click', () => {
+    microCurrentCategory = 'Cosmetici e cura della persona sconti'; 
+    currentPage = 1;  
+    caricaDatiMicroCat();  
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
+
+
+
+
 
 
 
@@ -632,26 +815,51 @@ function searchProducts() {
 
     for (let i = startIndex; i < endIndex; i++) {
         const prodotto = filteredProducts[i];
-
         const productDiv = document.createElement("div");
         productDiv.classList.add("products");
 
-        productDiv.innerHTML = `
-            <div class="prodotti-backdrop"></div>
-            
-            <img src="${prodotto[i]['immagine']}" alt="">
-            <div class="products-description">
-                <h3>${prodotto[i]['nome']}</h3>  
-                <p class="categoria-prodotto">${prodotto[i]['categoria']}</p>
-                <p class="prodotto-descrizione">${prodotto[i]['descrizione']}</p>
+        // Check if the product is in the "sconti" category
+        if (String(prodotto['microcategoria']).includes('sconti')) {
+            let Sconto = (parseInt(prodotto['prezzo originale']) * parseInt(prodotto['sconto'])) / 100;
+            let prezzoScontato = parseInt(parseInt(prodotto['prezzo originale']) - Sconto) - 0.01;
 
-                <div class="prezzo-container-div">
-                    <p class="prezzo">prezzo: <span class="prezzo-detail">${prodotto[i]['prezzo']}€</span></p>
-                    <button class="prodotto-btn" refer="${prodotto[i]['nome']}">ordina</button>
+            productDiv.innerHTML = `
+                <div class="prodotti-backdrop"></div>
+                <p class="sconto-prodotto">Sconto del ${prodotto['sconto']}</p>
+                <img src="${prodotto['immagine']}" alt="">
+                <div class="products-description">
+                    <h3>${prodotto['nome']}</h3> 
+                    <p class="categoria-prodotto">${prodotto['categoria']}</p>
+                    <p class="prodotto-descrizione">${prodotto['descrizione']}</p>
+                    <div class="prezzo-container-div">
+                        <div class="prezzo-container">
+                            <p class="prezzo-originale">prezzo: <span class="sbarrato">${prodotto['prezzo originale']}€</span></p>
+                            <p class="prezzo-scontato"> ${prezzoScontato}€</p>
+                        </div>
+                        <button class="prodotto-btn" data-whatsapp-number="393914393426" 
+                                data-prefill-message="Salve, vorrei ordinare il prodotto: ${prodotto['nome']}">
+                            ordina
+                        </button>
+                    </div>
                 </div>
-                
-            </div>
-        `;
+            `;
+        } else {
+            // Non-sconti product rendering
+            productDiv.innerHTML = `
+                <div class="prodotti-backdrop"></div>
+                <img src="${prodotto['immagine']}" alt="">
+                <div class="products-description">
+                    <h3>${prodotto['nome']}</h3>  
+                    <p class="categoria-prodotto">${prodotto['categoria']}</p>
+                    <p class="prodotto-descrizione">${prodotto['descrizione']}</p>
+                    <div class="prezzo-container-div">
+                        <p class="prezzo">prezzo: <span class="prezzo-detail">${prodotto['prezzo']}€</span></p>
+                        <button class="prodotto-btn" refer="${prodotto['nome']}">ordina</button>
+                    </div>
+                </div>
+            `;
+        }
+
         ProdottiContainer.appendChild(productDiv);
     }
 
