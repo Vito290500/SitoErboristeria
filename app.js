@@ -103,18 +103,31 @@ function  renderProdottiScontati(){
 
         const productDiv = document.createElement("div");
         productDiv.classList.add("item-scontato");
+    
+        let Sconto = (parseInt(datiProdottiConsigliati['prodottiScontati'][el]['prezzo']) * parseInt(datiProdottiConsigliati['prodottiScontati'][el]['sconto'])) / 100;
+        let prezzoScontato = parseInt(parseInt(datiProdottiConsigliati['prodottiScontati'][el]['prezzo']) - Sconto) - 0.01
 
 
         productDiv.innerHTML = `
             <div id="backdrop"></div>
-
-            <img src="${datiProdottiConsigliati['prodottiScontati'][el]['immagine']}" alt="">
-   
+            <p class="tag">- ${datiProdottiConsigliati['prodottiScontati'][el]['sconto']}</p>
+            <img class="hover-img" src="${datiProdottiConsigliati['prodottiScontati'][el]['immagine']}" alt="">
+        
             <div class="item-consigliato-description">
                 <h3>${datiProdottiConsigliati['prodottiScontati'][el]['nome']}</h3>
                 <p class="categoria">${datiProdottiConsigliati['prodottiScontati'][el]['categoria']}</p>
                 <p>${datiProdottiConsigliati['prodottiScontati'][el]['descrizione']}</p>
-                <button onclick="window.location.href='#Prodotti';">Scopri altri prodotti simili</button>
+            </div>
+
+            <div class="footerProducts">
+                <button class="ordina-btn" data-whatsapp-number="393914393426" 
+                            data-prefill-message="Salve, vorrei ordinare il prodotto: ${datiProdottiConsigliati['prodottiScontati'][el]['nome']}">
+                        ordina
+                </button>
+                <div class="prezzo-sale">
+                    <p id="prezzo-originale">${datiProdottiConsigliati['prodottiScontati'][el]['prezzo']} €</p>
+                    <p id="prezzo-scontato">${prezzoScontato} €</p>
+                </div>
             </div>
 
         `;
@@ -350,6 +363,8 @@ const comesticiCategoria = document.getElementById('Cosmetici-e-cura-della-perso
 const outletCategoria = document.getElementById('Outlet');
 const outletNavBar = document.getElementById('OutletLinkage');
 const prodottiNavBar = document.getElementById('ProdottiLinkage');
+const prodottiMobileNavBar = document.getElementById('ProdottiLinkageMobile');
+const oultetMobileNavBar = document.getElementById('OutletLinkageMobile');
 const scopriBtn = document.getElementById('scopri');
 
 tradizioneCategoria.addEventListener('click', () => {
@@ -395,6 +410,18 @@ outletNavBar.addEventListener('click', () => {
     categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
 });
 prodottiNavBar.addEventListener('click', () => {
+    currentCategory = 'Tradizione erboristica'; 
+    currentPage = 1;  
+    rendereCategoria(); 
+    categoriaAttiva.innerHTML = "> " + currentCategory;
+});
+oultetMobileNavBar.addEventListener('click', () => {
+    currentCategory = 'Prodotti in sconto'; 
+    currentPage = 1;  
+    rendereCategoria(); 
+    categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
+});
+prodottiMobileNavBar.addEventListener('click', () => {
     currentCategory = 'Tradizione erboristica'; 
     currentPage = 1;  
     rendereCategoria(); 
@@ -892,8 +919,17 @@ function showModal(){
 }
 searchBtn.addEventListener('click', showModal)
 
+searchField.addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
 
-
+        if (searchModal.style.display !== "block") {
+            showModal();  
+        }
+        currentSearchPage = 1;  
+        searchProducts();  
+    }
+});
 
 
 

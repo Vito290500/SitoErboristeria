@@ -42,35 +42,40 @@
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
             "descrizione" : "piccola descrizione",
-            "prezzo": "18.99"
+            "prezzo": "18.99",
+            "sconto": "10%"
         },
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
             "descrizione" : "piccola descrizione",
-            "prezzo": "18.99"
+            "prezzo": "18.99",
+            "sconto": "10%"
         }, 
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
             "descrizione" : "piccola descrizione",
-            "prezzo": "18.99"
+            "prezzo": "18.99",
+            "sconto": "10%"
         },   
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
             "descrizione" : "piccola descrizione",
-            "prezzo": "18.99"
+            "prezzo": "18.99",
+            "sconto": "10%"
         },  
         {
             "nome": "carbone",
             "immagine": "dati/immaginiOfferte/carbone.jpg",
             "categoria": "integratori alimentari",
             "descrizione" : "piccola descrizione",
-            "prezzo": "18.99"
+            "prezzo": "18.99",
+            "sconto": "10%"
         } 
     ]
 }
