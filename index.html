@@ -35,10 +35,10 @@
 <body>
     <!-- Backdrop Mobile Nav View -->
     <div class="backdropNav" id="backdropNav">
-        <button class="closeModal" id="closeModal"><svg fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/></svg></button>
+        <button class="closeModal" id="closeModal"><svg fill="#1f6742" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/></svg></button>
         
         <ul class="mobile__nav_items" id="mobile__nav">
-            <li><a href="#">l'Herborista</a></li>
+            <li><a href="#Home">l'Herborista</a></li>
             <li><a href="#Offerte">Offerte Lampo</a></li>
             <li><a id="ProdottiLinkageMobile" href="#Prodotti">Prodotti</a></li>
             <li><a id="OutletLinkageMobile" href="#Prodotti">Outlet</a></li>
@@ -51,7 +51,7 @@
     <header>
         <nav class="navBar">
             <div class="nav__title">
-                <a href="#">L'Herborista</a>
+                <a href="#Home">L'Herborista</a>
             </div>
             
             <ul class="nav__items">
@@ -71,19 +71,24 @@
         <!-- Home Section -->
         <section id="Home" class="Home"> 
 
-            <div class="Home_Image"></div>
-            <div id="backdropHome"></div>
+            <div class="home-container">
+                
+                <div class="Home_Image">
+                    <div id="backdropHome"></div>
+                </div>
+                
 
-
-            <div class="Home_Description">
-                <img class="logo" src="includes/img/logo2.png" alt="">
-                <h3>" Il Tuo Benessere al centro di tutto "</h3>
-
-                <div class="Home_Description_btn">
-                    <a href="#ChiSiamo" class="button-type">Chi siamo?</a>
-                    <a href="#VieniATrovarci" class="button-type">Vieni a Trovarci</a>
+                <div class="Home_Description">
+                    <img class="logo" src="includes/img/logo2.png" alt="">
+                    <h3>" Il Tuo Benessere al centro di tutto "</h3>
+    
+                    <div class="Home_Description_btn">
+                        <a href="#ChiSiamo" class="button-type">Chi siamo?</a>
+                        <a href="#VieniATrovarci" class="button-type">Vieni a Trovarci</a>
+                    </div>
                 </div>
             </div>
+
         </section>
 
         <!-- Offerte Lampo Section -->
