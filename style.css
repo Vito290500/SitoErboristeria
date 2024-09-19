@@ -310,44 +310,6 @@ section{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Offerte Lampo Section */
 #Offerte{
     position: absolute;
@@ -619,23 +581,18 @@ section{
     color: var(--text-color); 
     cursor: pointer;
 }
-.best-save{
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%);
+.prodotti-scontatiContainer{
+    height: 550px;
+}
+.prodotti-scontatiContainer h3{
+    margin-top: 1.5rem;
 }
 .prodotti-scontati-container{
-    position: absolute;
-    top: 48%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
     width: 94%;
-    left: 3%;
-    align-items: center;
-    justify-items: center;
-    margin: auto;
-    gap: 10px;
+    margin: 0px 3%;
 } 
 .prezzo-sale{
     width: 10rem;
@@ -730,15 +687,6 @@ section{
     text-align: center;
     color: gray;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1660,10 +1608,10 @@ footer p a{
     .VieniATrovarci{
         display: none;
     }
-
     section{
         padding-top: 3rem;
     }   
+
     /* Home Style */
     #Home {
         top: 0;
@@ -1697,6 +1645,9 @@ footer p a{
     }
   
     /* Offerte Section */
+    #Offerte{
+        height: 138rem;
+    }
     #Offerte h1{
         height: 2.2rem;
         font-size: 16px;
@@ -1785,6 +1736,195 @@ footer p a{
         top: 20%; 
         height: 6rem;  
     }
+    .prodotti-scontati{
+        height: 1580px;
+    }
+    .prodotti-scontati h2{
+        font-size: 20px;
+    }
+    .prodotti-scontati h3{
+        margin-top: -1rem;
+        font-size: 18px;
+    }
+    .etichetta{
+        right: 1.6rem;  
+        border-radius: 4px;
+        top: 7.6rem;
+        font-size: 12px;
+        height: 1.5rem;
+        padding: 2px;
+        width: 6.5rem;
+    }
+    .categorie-container{
+        display: flex;
+        flex-direction: column;        
+        height: 1100px;
+        padding: 1rem;
+        position: relative;
+    }
+    .categorieContainer{
+        margin-top: 1rem;
+        width: 100%;
+        height: 12rem;
+    }
+    .categorieDescription{
+        height: 5rem;
+        top: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .categorieDescription h3{
+        width: 100%;
+        font-size: 18px;
+        height: 2rem;
+    }
+    .categorieDescription button{
+        width: 80%;
+        height: 2rem;
+        font-size: 16px;
+        margin: 0;
+    }
+    .prodotti-scontatiContainer{
+        position: absolute;
+        top: 79%;
+        height: 300px;
+        width: 100vw;
+    } 
+    .prodotti-scontati-container{
+        height: 80%;
+        display: flex;
+        width:  96%;
+        margin: auto;
+        overflow-x: auto; 
+        overflow-y: hidden; 
+        white-space: nowrap; 
+    } 
+    .prodotti-scontati-container > * {
+        flex: 0 0 auto; 
+    }
+    .item-scontato{
+        margin: 1px;
+        width: 10rem;
+        height: 20rem;   
+        position: relative; 
+    }
+    .item-scontato img{
+        width: 100%;
+        height: 10rem;
+    }
+    .item-scontato-description{
+        top: 44%; 
+        height: 2rem;
+    }
+    .item-scontato h3{
+        font-size: 16px;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .item-scontato-description p{
+        font-size: 14px;
+        margin-top: -1rem;
+    }
+    .footerProducts{
+        height: 3rem;
+        position: absolute;
+        top: 55%;
+        width: 100%;
+    }
+    .footerProducts p{
+        font-size: 16px;
+        right: 0.5rem;
+        top: 0.8rem;
+    }
+    .ordina-btn{
+        width: 5rem;
+        height: 2rem;
+        font-size: 16px;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+    }
+    .hover-img:hover + .item-scontato-description,
+    .item-scontato-description:hover {
+        top: 20%; 
+        height: 6rem;  
+    }
+    .prezzo-sale{
+        width: 5rem;
+    }
+    #prezzo-originale{
+        font-size: 12px;
+        position: absolute;
+        top: 0.2rem;
+        left: 0.5rem;
+    }
+    #prezzo-scontato{
+        font-size: 16px;
+        position: absolute;
+        top: 1.5rem;
+        right: 0.5rem;
+    }
+    .prodotti-scontatiContainer h3{
+        margin-bottom: 0.5rem;
+    }
+    .item-consigliato-description h3{
+        margin-bottom: 2rem;
+    }
+    .scopri-div{
+        top: 86%;  
+    }
+    .scopri{
+        width: 14rem;
+        height: 2rem;
+        font-size: 16px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /* Prodotti Section */
+    #Prodotti{
+        top: 196.5rem;
+        background-color: yellow;
+    }
+
+
+    /* Chi siamo Section */
+    .chi-siamo-title{
+        font-size: 16px;
+        height: 2.2rem;
+        margin-top: 0rem;
+    }
+    .chiSiamoImage{
+        background-position: 55% 55%;
+    }
+    .ChiSiamoDescription{
+        top: 10rem;
+        left: 2rem;
+        width: 12rem;
+    }
+    .ChiSiamoDescription h3{
+        font-size: 22px;
+
+    }
+    .ChiSiamoDescription p{
+        font-size: 14px;
+    }
+    .ChiSiamoDescription button{
+        margin-top: 0rem;
+        width: 10rem;
+        height: 1.7rem;
+        font-size: 16px;
+    }
+
 
 
 
