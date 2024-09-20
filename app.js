@@ -31,15 +31,6 @@ CloseMenuBtn.addEventListener('click', close);
 
 
 
-
-
-
-
-
-
-
-
-
 // Prodotti Consigliati Section
 let datiProdottiConsigliati = {};
 const ProdottiConsigliatiContainer = document.getElementById('prodotti-consigliati-list');

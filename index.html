@@ -51,16 +51,16 @@
     <header>
         <nav class="navBar">
             <div class="nav__title">
-                <a href="#Home">L'Herborista</a>
+                <a href="#Home" refer="Home">L'Herborista</a>
             </div>
             
             <ul class="nav__items">
-                <li><a href="#Offerte">Offerte Lampo</a></li>
-                <li><a id="ProdottiLinkage" href="#Prodotti">Prodotti</a></li>
-                <li><a id="OutletLinkage" href="#Prodotti">Outlet</a></li>
-                <li><a href="#ChiSiamo">Chi siamo?</a></li>    
+                <li><a href="#Offerte" refer="Offerte">Offerte Stagionali</a></li>
+                <li><a id="ProdottiLinkage" href="#Prodotti" refer="Prodotti">Prodotti</a></li>
+                <li><a id="OutletLinkage" href="#Prodotti" refer="Prodotti">Outlet</a></li>
+                <li><a href="#ChiSiamo" refer="ChiSiamo">Chi siamo?</a></li>    
             </ul>
-            <a class="VieniATrovarci" href="#VieniATrovarci">Vieni a trovarci</a>
+            <a class="VieniATrovarci" href="#VieniATrovarci" refer="VieniATrovarci">Vieni a trovarci</a>
 
             <button class="hamburger"><svg fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg></button>
         </nav>
@@ -93,7 +93,7 @@
 
         <!-- Offerte Lampo Section -->
         <section id="Offerte">
-            <h1>Offerte Lampo</h1>
+            <h1>Offerte Stagionali</h1>
 
             <div id="offerte-carousel" class="p-3 m-0 border-0 bd-example m-0 border-0"  style="width: 100%; height: 550px;">
                 <!-- Carousel Item -->
@@ -451,7 +451,7 @@
         <!-- Chi siamo Section -->
         <section id="ChiSiamo">
 
-            <h2 class="chi-siamo-title">ChiSiamo?</h2>
+            <h2 class="chi-siamo-title">Chi Siamo?</h2>
 
             <div class="imagePresentationContainer">
                 <div class="chiSiamoImage"></div>
@@ -485,7 +485,7 @@
                         }).addTo(map);
                     
                         var marker = L.marker([41.2748574564919, 16.417245772489967]).addTo(map);
-                        marker.bindPopup("<b>L'Herborista - dott. Carla Avveniente</b>", {
+                        marker.bindPopup("<b>Erboristeria L' Herborista - dott. Carla Avveniente</b>", {
                             maxWidth: 200,  
                             minWidth: 50,   
                             className: 'custom-popup' 
@@ -620,34 +620,10 @@
                   
                 </div>
                 <p class="Copyright">Copyright @2024 All rights reserved | This website was made by <a href="https://vito290500.github.io/SitoPortfolio/">Vito Di Venosa</a></p>
-        </footer> 
+            </footer> 
         </section>
     
     </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 </html>
