@@ -485,7 +485,11 @@
                         }).addTo(map);
                     
                         var marker = L.marker([41.2748574564919, 16.417245772489967]).addTo(map);
-                        marker.bindPopup("<b>L'Herborista - dott. Carla Avveniente</b>").openPopup();
+                        marker.bindPopup("<b>L'Herborista - dott. Carla Avveniente</b>", {
+                            maxWidth: 200,  
+                            minWidth: 50,   
+                            className: 'custom-popup' 
+                        }).openPopup();
                     </script>
                 </div>
 
@@ -494,41 +498,50 @@
                     <div class="orari">
                         <h3>Orari Apertura</h3>
 
+                        
+
                         <div class="orari-container">
                             <div class="day-container">
-                                <h4>Lunedi</h4>
+                                <h4 class="responsive-day">Lun</h4>
+                                <h4 class="day-title">Lunedi</h4>
                                 <p>9:00 13:00</p>
                                 <p>16:00 20:00</p>
                             </div>
                             <div class="day-container">
-                                <h4>Martedi</h4>
+                                <h4 class="responsive-day">Mar</h4>
+                                <h4 class="day-title">Martedi</h4>
                                 <p>9:00 13:00</p>
                                 <p>16:00 20:00</p>
                             </div>
                             <div class="day-container">
-                                <h4>Mercoledi</h4>
+                                <h4 class="responsive-day">Mer</h4>
+                                <h4 class="day-title">Mercoledi</h4>
                                 <p>9:00 13:00</p>
                                 <p>16:00 20:00</p>
                             </div>
                             <div class="day-container">
-                                <h4>Giovedi</h4>
+                                <h4 class="responsive-day">Gio</h4>
+                                <h4 class="day-title">Giovedi</h4>
                                 <p>9:00 13:00</p>
                                 <p>16:00 20:00</p>
                             </div>
                             <div class="day-container">
-                                <h4>Venerdi</h4>
+                                <h4 class="responsive-day">Ven</h4>
+                                <h4 class="day-title">Venerdi</h4>
                                 <p>9:00 13:00</p>
                                 <p>16:00 20:00</p>
                             </div>
                             <div class="day-container">
-                                <h4>Sabato</h4>
+                                <h4 class="responsive-day">Sab</h4>
+                                <h4 class="day-title">Sabato</h4>
                                 <p>9:00 13:00</p>
-                                <p>16:00 20:00</p>
+                                <p>chiusi</p>
                             </div>
                             <div class="day-container">
-                                <h4>Domenica</h4>
-                                <p>closed</p>
-                                <p>closed</p>
+                                <h4 class="responsive-day">Dom</h4>
+                                <h4 class="day-title">Domenica</h4>
+                                <p>chiusi</p>
+                                <p>chiusi</p>
                             </div>
                         </div>
 
