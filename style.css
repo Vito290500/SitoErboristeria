@@ -201,12 +201,13 @@ section{
     height: 100%;
     position: absolute;
     top: 0;
-    left: -5px;
+    left: 0;
     background-image: url("includes/img/negozio.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position:top;
     filter: blur(6px);
+    overflow: hidden;
 }
 #backdropHome{
     position: absolute;
