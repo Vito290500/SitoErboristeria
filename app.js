@@ -27,6 +27,47 @@ CloseMenuBtn.addEventListener('click', close);
 
 
 
+/* Mobile Nav bar for products */
+const allOpenModalProductsNavbar = document.querySelectorAll('.openMicro');
+
+allOpenModalProductsNavbar.forEach((openBtnProducts) => {
+
+    const modalToOpen = openBtnProducts.getAttribute('refer'); 
+    const modalElement = document.getElementById(modalToOpen); 
+    const closeRefer = openBtnProducts.getAttribute('refer-close');
+    const referCloseBtn = document.getElementById(closeRefer);
+
+    openBtnProducts.addEventListener('click', () => {
+        modalElement.style.display = 'flex';
+        referCloseBtn.style.display= 'flex';    
+        openBtnProducts.style.display= 'none';       
+    });
+
+    referCloseBtn.addEventListener('click',() => {
+        modalElement.style.display= 'none';
+        referCloseBtn.style.display= 'none';    
+        openBtnProducts.style.display= 'block';       
+    });
+
+});
+
+
+const hamburgerMobielProducts = document.querySelector('.hamburgerProducts');
+const macroCategorieContainerMobile = document.querySelector('.macrocategoriaContainerMobile')
+const closeMacroNabar = document.querySelector('.closeModalProducts')
+
+
+hamburgerMobielProducts.addEventListener('click',()=>{
+    macroCategorieContainerMobile.style.display = 'block';
+    hamburgerMobielProducts.style.display = 'none';
+    closeMacroNabar.style.display = 'block';
+})  
+
+closeMacroNabar.addEventListener('click', ()=>{
+    macroCategorieContainerMobile.style.display = 'none';
+    hamburgerMobielProducts.style.display = 'block';
+    closeMacroNabar.style.display = 'none';
+})
 
 
 
@@ -173,11 +214,24 @@ caricaDatiOfferteLampo()
 const ProdottiContainer = document.getElementById('product-list');
 const paginationContainer = document.getElementById('pagination');
 
-const productsPerPage = 18;
+const screenWidth = window.innerWidth;
+let productsPerPage = 0;
+
+
+if (screenWidth <= 480){
+    productsPerPage = 10;
+}  else{
+    productsPerPage = 18;
+}
+
 let datiProdotti = {};
 let currentPage = 1;
 let currentCategory = 'Tradizione erboristica';
 const categoriaAttiva = document.getElementById('categoria-attiva');
+
+
+
+
 
 // Function to render products for the current category
 function rendereCategoria() {
