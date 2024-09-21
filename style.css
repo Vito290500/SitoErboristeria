@@ -801,8 +801,8 @@ section{
 #outDiv{
     width: 13rem;
 }
-#outDiv .macroCategorie{
-    border: 1px solid var(--sconti-bg);
+#Outlet{
+    color: var(--sconti-bg);
 }
 .macroCategorie-div button{
     width: 100%;
@@ -912,7 +912,7 @@ section{
     grid-template-columns: 1fr 1fr 1fr;
 }
 span{
-    color: red;
+    color: var(--sconti-bg);
     margin-left: 5px;
 }
 .search-modal{
@@ -1099,7 +1099,7 @@ span{
     top: 2rem;
     right: -2rem;
     width: 10rem;
-    background-color: red;
+    background-color: var(--sconti-bg);
     z-index: 20;
     transform: rotate(42deg);
 }
@@ -1933,7 +1933,7 @@ footer p a{
 
     /* Prodotti Section */
     #Prodotti{
-        top: 195.5rem;
+        top: 192rem;
         height: 90rem;
     }
     .prodotti-title{
@@ -1992,6 +1992,7 @@ footer p a{
     }
     .search-modal{
         height: 3rem;
+        background-color: var(--bg-color-primo-livello);
     }
     #search-field{
         width: 15rem;
@@ -2001,6 +2002,7 @@ footer p a{
     }
     .search-btn-modal{
         position: absolute;
+        background-color: var(--bg-color-primo-livello);
         left: 0.3rem;
         top: 10%;
         height: 80%;
@@ -2015,6 +2017,7 @@ footer p a{
         top: 8%;
         height: 80%;
         width: 2rem;
+        background-color: var(--bg-color-primo-livello);
     }
     .close-search-modal img{
         width: 25px;
@@ -2103,14 +2106,6 @@ footer p a{
     .outletMicroMobile{
         background-color: var(--bg-color-secondo-levello)
     }
-
-
-
-
-
-
-
-
     .prodotti-categorie-container{
         height: 1350px;
     }
@@ -2170,8 +2165,20 @@ footer p a{
         height: 1.5rem;
         width: 6rem;
     }
-
-
+    .pagination{
+        margin-top: 3rem;
+    }
+    .pagination button{
+        font-size: 14px;
+    }
+    .sconto-prodotto{
+        top: 1.5rem;
+        right: -3rem;
+        width: 10rem;
+        height: 1rem;
+        font-size: 12px;
+        padding: 0;
+    }
 
 
 
@@ -2179,6 +2186,11 @@ footer p a{
 
 
     /* Chi siamo Section */
+    #ChiSiamo{
+        position: absolute;
+        top: 280rem;
+        height: 62.5rem; 
+    }
     .chi-siamo-title{
         font-size: 16px;
         height: 2.2rem;
@@ -2211,6 +2223,7 @@ footer p a{
     /*  Vieni A trovarci section */
     #VieniATrovarci{
         height: 1100px;
+        top: 344rem;
     }
     .negozio-information-container{
         margin-top: 0rem;

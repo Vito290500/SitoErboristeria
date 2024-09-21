@@ -496,7 +496,17 @@ var datiProdottiForMicroCat = {};
 const listOfMacro = ['Tradizione erboristica','Idee regalo ed oggettistica', 'Alimentazione naturale','Integratori Naturali','Cosmetici e cura della persona', 'Prodotti in sconto']
 let microCurrentCategory = '';
 let currentMicroCatPage = 1;
-const itemsPerMicroCatPage = 18;
+
+let itemsPerMicroCatPage = 0;
+
+
+if (screenWidth <= 480){
+    itemsPerMicroCatPage = 10;
+}  else{
+    itemsPerMicroCatPage = 18;
+}
+
+
 
 function renderCheck(){
 
@@ -775,7 +785,17 @@ const customAlert = document.getElementById('customAlert');
 const alertMessage = document.getElementById('alertMessage');
 const closeAlertButton = document.getElementById('closeAlertButton');
 let currentSearchPage = 1;
-const itemsPerSearchPage = 18;
+
+
+
+let itemsPerSearchPage = 0;
+
+
+if (screenWidth <= 480){
+    itemsPerSearchPage = 10;
+}  else{
+    itemsPerSearchPage = 18;
+}
 
 // Show Alert
 function showCustomAlert(message) {
@@ -938,6 +958,16 @@ function searchProducts() {
     setupSearchPagination(filteredProducts.length);
 }
 function showModal(){
+
+    const hamburgerMobielProducts = document.querySelector('.hamburgerProducts');
+    const macroCategorieContainerMobile = document.querySelector('.macrocategoriaContainerMobile')
+    const closeMacroNabar = document.querySelector('.closeModalProducts')
+
+    closeMacroNabar.style.display = 'none';
+    macroCategorieContainerMobile.style.display = 'none';
+    hamburgerMobielProducts.style.display = 'block';
+
+
     const activatedModal = document.querySelectorAll('.active');
 
     for (const el of activatedModal){
