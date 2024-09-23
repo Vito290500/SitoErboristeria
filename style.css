@@ -2948,7 +2948,7 @@ footer p a{
     /* Chi siamo Section */
     #ChiSiamo{
         position: absolute;
-        top: 280rem;
+        top: 400rem;
         height: 62.5rem; 
     }
     .chi-siamo-title{
@@ -2983,7 +2983,7 @@ footer p a{
     /*  Vieni A trovarci section */
     #VieniATrovarci{
         height: 1100px;
-        top: 344rem;
+        top: 460rem;
     }
     .negozio-information-container{
         margin-top: 0rem;
