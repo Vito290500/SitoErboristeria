@@ -5,6 +5,20 @@ const BackDrop = document.getElementById('backdropNav');
 const MobileLinkNav = document.getElementById('mobile__nav');
 const Body = document.querySelector('body');
 const headerHeight = document.querySelector('.navBar').offsetHeight;
+const linkMobile = document.querySelectorAll('.mobile__nav_items li a')
+
+
+
+linkMobile.forEach(link => {
+  link.addEventListener('click', function(event) {
+
+    event.preventDefault();
+    window.location.href = link.href; 
+
+    close()
+
+  });
+});
 
 
 /* Mobile Nav Bar */
