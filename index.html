@@ -145,8 +145,6 @@
                 </div>
             </div>
 
-
-
             <div class="prodotti-scontati">
                 <h2>Prodotti Scontati fino ad Esaurimento Scorte</h2>
             
@@ -231,34 +229,32 @@
                         <button id="closeAlertButton" class="close-alert">OK</button>
                     </div>
                 </div>
-
-
-                <div class="nav-bar-products-mobile">
-
-                    <div class="search-modal" id="search-modal">
-                        <input id="search-field" type="text" class="search-field" placeholder="Cerca prodotti...">
-                        <button class="close-search-modal" id="closeModalBtn">x</button>
-                        <button id="search-btn-modal" class="search-btn-modal"><img src="includes/img/ricerca.png" alt=""></button>
-                    </div>
-
-                    <p id="categoria-attiva">>  Tradizione-erboristica</p>
                 
+                <div class="nav-bar-products-mobile">
+                    <div class="search-modal" id="search-modalMobile">
+                        <input id="search-fieldMobile" type="text" class="search-fieldMobile" placeholder="Cerca prodotti...">
+                        <button id="closeModalBtnMobile" class="close-search-modal">x</button>
+                        <button id="search-btn-modalMobile" class="search-btn-modal"><img src="includes/img/ricerca.png" alt=""></button>
+                    </div>
+                
+                    <p id="categoria-attivaMobile">>  Tradizione-erboristica</p> 
+
                     <button class="hamburgerProducts" id="hamburgerProducts"><svg fill="#1f6742" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg></button>
                     <button class="closeModalProducts"><svg fill="#1f6742" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="25px" height="25px"><path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"/></svg></button>
-                    
+        
+  
                     <div class="search-bar">
-                        <button id="search-btn" class="search-btn"><img src="includes/img/ricerca.png" alt=""></button>
-                    </div>         
-                    
-                    <div class="macrocategoriaContainerMobile">
+                        <button id="search-btnMobile" class="search-btn"><img src="includes/img/ricerca.png" alt=""></button>
+                    </div>  
+
+                    <div class="macrocategoriaContainer">
 
                         <!-- Macro Categorie Tradizioni -->
-                        <div class="macroCategorie-div" id="tradDiv">
-                            <button class="macroCategorie" id="TradizioneErboristica">Tradizione erboristica</button>   
+                        <div class="macroCategorie-div" id="tradDivMobile">
+                            <button class="macroCategorie Mobile" refer="Tradizione erboristica">Tradizione erboristica</button>   
                             <p class="openMicro" refer="microTradizioneMobile" refer-close="close1">+</p>    
                             <p class="closeMicro" id="close1">x</p> 
                         </div>
-
                         <!-- Micro Categorie Tradizione erboristica -->
                         <div class="microCategorie-containerMobile" id="microTradizioneMobile" style="display: none;">
                             <button class="microCategorie" id="microCategorie">Tisane composte, spezie ed erbe officinali sfuse</button>
@@ -270,10 +266,10 @@
                             <button class="microCategorie" id="microCategorie">Argille</button>
                             <button class="microCategorie" id="microCategorie">Hennè</button>
                         </div>
-                    
+
                         <!-- Macro Categorie Idee  -->
-                        <div class="macroCategorie-div" id="ideeDiv">
-                            <button class="macroCategorie" id="Idee-regalo-ed-oggettistica">Idee regalo ed oggettistica</button>
+                        <div class="macroCategorie-div" id="ideeDivMobile">
+                            <button class="macroCategorie Mobile" refer="Idee regalo ed oggettistica">Idee regalo ed oggettistica</button>
                             <p class="openMicro" refer="microIdeeMobile" refer-close="close2">+</p>
                             <p class="closeMicro" id="close2">x</p>            
                         </div>    
@@ -293,10 +289,10 @@
                             <button class="microCategorie" id="microCategorie">Speciale Natale</button>
                             <button class="microCategorie" id="microCategorie">Speciale San Valentino</button>
                         </div>      
-                      
+      
                         <!-- Macro Categorie Alimentazione -->
-                        <div class="macroCategorie-div" id="aliDiv">
-                            <button class="macroCategorie" id="Alimentazione-Naturale">Alimentazione Naturale</button>
+                        <div class="macroCategorie-div" id="aliDivMobile">
+                            <button class="macroCategorie Mobile" refer="Alimentazione naturale">Alimentazione Naturale</button>
                             <p class="openMicro" refer="microAlimentazioneMobile" refer-close="close3">+</p> 
                             <p class="closeMicro" id="close3">x</p> 
                         </div>
@@ -308,12 +304,11 @@
                         </div> 
 
                         <!-- Macro Categorie Integratori naturali -->
-                        <div class="macroCategorie-div" id="inteDiv">
-                            <button class="macroCategorie" id="Integratori-Naturali" >Integratori Naturali</button>
+                        <div class="macroCategorie-div" id="inteDivMobile">
+                            <button class="macroCategorie Mobile" refer="Integratori Naturali" >Integratori Naturali</button>
                             <p class="openMicro" refer="microIntegratoriMobile" refer-close="close4">+</p> 
                             <p class="closeMicro" id="close4">x</p>
                         </div>
-
                         <div class="microCategorie-containerMobile" id="microIntegratoriMobile" style="display: none;">
                             <button class="microCategorie" id="microCategorie">Energia e stanchezza </button>
                             <button class="microCategorie" id="microCategorie">Ansia e insonnia</button>
@@ -336,16 +331,15 @@
                         </div>
 
                         <!-- Macro Categorie Cosmetici -->
-                        <div class="macroCategorie-div" id="cosmDiv">    
-                            <button class="macroCategorie" id="Cosmetici-e-cura-della-persona">Cosmetici e cura della persona</button>
+                        <div class="macroCategorie-div" id="cosmDivMobile">    
+                            <button class="macroCategorie Mobile" refer="Cosmetici e cura della persona">Cosmetici e cura della persona</button>
                             <p class="openMicro" refer="microCosmeticiMobile" refer-close="close5">+</p>
                             <p class="closeMicro" id="close5">x</p>  
                         </div>
-
                         <!-- Micro Categorie Cosmetici -->
                         <div class="microCategorie-containerMobile" id="microCosmeticiMobile" style="display: none;">
                                 
-                        
+
                             <div class="micro-macroCategoriaMobile">
                                 <h3>Viso</h3>
 
@@ -361,9 +355,9 @@
                                     <button class="microCategorie" id="microCategorie">Cura delle labbra</button>
                                 </div>
                             </div>
-                          
+                        
                             <div class="micro-macroCategoriaMobile">    
-                              
+                            
                                 <h3>Corpo</h3>
                                 <div class="microMacroCategorieMobile" id="microCorpo">
                                     <button class="microCategorie" id="microCategorie">anticellulite e rassodanti</button>
@@ -395,13 +389,12 @@
                             </div>       
                         </div>
 
-                        <!-- Macro Categorie Outlet -->
-                        <div class="macroCategorie-div" id="outDiv">
-                            <button class="macroCategorie" id="Outlet">Prodotti in sconto</button> 
+                         <!-- Macro Categorie Outlet -->
+                        <div class="macroCategorie-div" id="outDivMobile">
+                            <button class="macroCategorie Mobile" refer="Prodotti in sconto">Prodotti in sconto</button> 
                             <p class="openMicro" refer="microOutletMobile"  refer-close="close6">+</p>  
                             <p class="closeMicro" id="close6">x</p>  
                         </div>  
-
                         <!-- Micro Categorie Outlet -->
                         <div class="microCategorie-containerMobile" id="microOutletMobile" style="display: none;">
 
@@ -415,8 +408,9 @@
                                 <button class="microCategorie" id="microCategorieOutlet">Cosmetici e cura della pelle<span> sconti</span></button>
                             </div>
                         </div>
-                    </div>
 
+
+                    </div>
                 </div>
 
                 <div class="tools-navbar-prodotti-container">

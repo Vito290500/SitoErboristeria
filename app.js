@@ -7,8 +7,6 @@ const Body = document.querySelector('body');
 const headerHeight = document.querySelector('.navBar').offsetHeight;
 const linkMobile = document.querySelectorAll('.mobile__nav_items li a')
 
-
-
 linkMobile.forEach(link => {
   link.addEventListener('click', function(event) {
 
@@ -19,7 +17,6 @@ linkMobile.forEach(link => {
 
   });
 });
-
 
 /* Mobile Nav Bar */
 function open(){
@@ -38,6 +35,8 @@ function close(){
 }
 OpenMenuBtn.addEventListener('click', open);
 CloseMenuBtn.addEventListener('click', close);
+
+
 
 
 
@@ -67,21 +66,21 @@ allOpenModalProductsNavbar.forEach((openBtnProducts) => {
 
 
 const hamburgerMobielProducts = document.querySelector('.hamburgerProducts');
-const macroCategorieContainerMobile = document.querySelector('.macrocategoriaContainerMobile')
+const macroCategorieContainerMobile = document.querySelector('.macrocategoriaContainer')
 const closeMacroNabar = document.querySelector('.closeModalProducts')
-
 
 hamburgerMobielProducts.addEventListener('click',()=>{
     macroCategorieContainerMobile.style.display = 'block';
     hamburgerMobielProducts.style.display = 'none';
     closeMacroNabar.style.display = 'block';
 })  
-
 closeMacroNabar.addEventListener('click', ()=>{
     macroCategorieContainerMobile.style.display = 'none';
     hamburgerMobielProducts.style.display = 'block';
     closeMacroNabar.style.display = 'none';
 })
+
+
 
 
 
@@ -199,20 +198,6 @@ function caricaDatiOfferteLampo() {
       });
 }
 caricaDatiOfferteLampo()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -422,9 +407,6 @@ const comesticiCategoria = document.getElementById('Cosmetici-e-cura-della-perso
 const outletCategoria = document.getElementById('Outlet');
 const outletNavBar = document.getElementById('OutletLinkage');
 const prodottiNavBar = document.getElementById('ProdottiLinkage');
-const prodottiMobileNavBar = document.getElementById('ProdottiLinkageMobile');
-const oultetMobileNavBar = document.getElementById('OutletLinkageMobile');
-const scopriBtn = document.getElementById('scopri');
 
 tradizioneCategoria.addEventListener('click', () => {
     currentCategory = 'Tradizione erboristica';  
@@ -474,12 +456,19 @@ prodottiNavBar.addEventListener('click', () => {
     rendereCategoria(); 
     categoriaAttiva.innerHTML = "> " + currentCategory;
 });
+
+
+
+const prodottiMobileNavBar = document.getElementById('ProdottiLinkageMobile');
+const oultetMobileNavBar = document.getElementById('OutletLinkageMobile');
+const scopriBtn = document.getElementById('scopri'); 
+
 oultetMobileNavBar.addEventListener('click', () => {
     currentCategory = 'Prodotti in sconto'; 
     currentPage = 1;  
     rendereCategoria(); 
     categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
-});
+}); 
 prodottiMobileNavBar.addEventListener('click', () => {
     currentCategory = 'Tradizione erboristica'; 
     currentPage = 1;  
@@ -493,14 +482,19 @@ scopriBtn.addEventListener('click', () => {
     categoriaAttiva.innerHTML = "> " + currentCategory + "<span>sconti</span>";
 });
 
+const categoriaAttivaMobile = document.getElementById('categoria-attivaMobile')
+const allMacro = document.querySelectorAll('.Mobile');
 
+allMacro.forEach(element => {
+    let refer = element.getAttribute('refer');
 
-
-
-
-
-
-
+    element.addEventListener('click', () => {
+        currentCategory = refer; 
+        currentPage = 1;  
+        rendereCategoria(); 
+        categoriaAttivaMobile.innerHTML = "> " + currentCategory;
+    })
+})
 
 
 
@@ -520,23 +514,28 @@ if (screenWidth <= 480){
     itemsPerMicroCatPage = 18;
 }
 
-
-
 function renderCheck(){
+    
 
     ProdottiContainer.innerHTML = "";
-
-    console.log(microCurrentCategory)
 
     if(microCurrentCategory.includes("sconti")){
         
         let updatedword = microCurrentCategory.replace("sconti", " ")
         
-        categoriaAttiva.innerHTML = "> " + updatedword + "<span>sconti</span>";
+        if(screenWidth <= 960){
+            categoriaAttivaMobile.innerHTML = "> " + updatedword + "<span>sconti</span>";
+        }else{
+            categoriaAttiva.innerHTML = "> " + updatedword + "<span>sconti</span>";
+        }
     }
     else{
-        categoriaAttiva.textContent = "> " + microCurrentCategory;
-       
+        if(screenWidth <= 960){
+            categoriaAttivaMobile.textContent = "> " + microCurrentCategory;
+        }else{
+            categoriaAttiva.textContent = "> " + microCurrentCategory;
+            console.log('okay')
+        }
     }
 
     const filteredProducts = [];
@@ -799,9 +798,6 @@ const customAlert = document.getElementById('customAlert');
 const alertMessage = document.getElementById('alertMessage');
 const closeAlertButton = document.getElementById('closeAlertButton');
 let currentSearchPage = 1;
-
-
-
 let itemsPerSearchPage = 0;
 
 
@@ -883,11 +879,23 @@ function createSearchDots() {
     paginationContainer.appendChild(dots);
 }
 function searchProducts() {
-    const searchTerm = searchField.value.trim().toLowerCase();
 
-    if (searchTerm === "") {
-        showCustomAlert("Assicurati di inserire dei caratteri.");
-        return;
+    let searchTerm = '';
+    
+    const firstCheck = searchField.value.trim().toLowerCase();
+    const checkSearch = searchFieldMobile.value.trim().toLowerCase();
+
+    if (firstCheck === "") {
+
+        if (checkSearch === "") {
+            showCustomAlert("Assicurati di inserire dei caratteri.");
+            return;
+        }
+        else{
+            searchTerm = searchFieldMobile.value.trim().toLowerCase();
+        }
+    }else{
+        searchTerm = searchField.value.trim().toLowerCase();
     }
 
     ProdottiContainer.innerHTML = "";
@@ -972,7 +980,7 @@ function searchProducts() {
     setupSearchPagination(filteredProducts.length);
 }
 function showModal(){
-
+/* 
     const hamburgerMobielProducts = document.querySelector('.hamburgerProducts');
     const macroCategorieContainerMobile = document.querySelector('.macrocategoriaContainerMobile')
     const closeMacroNabar = document.querySelector('.closeModalProducts')
@@ -980,7 +988,7 @@ function showModal(){
     closeMacroNabar.style.display = 'none';
     macroCategorieContainerMobile.style.display = 'none';
     hamburgerMobielProducts.style.display = 'block';
-
+     */
 
     const activatedModal = document.querySelectorAll('.active');
 
@@ -1002,7 +1010,7 @@ function showModal(){
 
     const searchBtnModal = document.getElementById('search-btn-modal');
     searchBtnModal.addEventListener('click', () => {
-        currentSearchPage = 1; // Reset to first page on new search
+        currentSearchPage = 1; 
         searchProducts();
     });
 }
@@ -1019,6 +1027,71 @@ searchField.addEventListener('keydown', function(event) {
         searchProducts();  
     }
 });
+
+
+// Search Mobile
+const searchBtnMobile = document.getElementById('search-btnMobile')
+const searchFieldMobile = document.getElementById('search-fieldMobile')
+const searchModalMobile = document.getElementById('search-modalMobile');
+
+function showModalMobile(){
+
+    const hamburgerMobielProducts = document.querySelector('.hamburgerProducts');
+    const macroCategorieContainerMobile = document.querySelector('.macrocategoriaContainer')
+    const closeMacroNabar = document.querySelector('.closeModalProducts')
+
+    closeMacroNabar.style.display = 'none';
+    macroCategorieContainerMobile.style.display = 'none';
+    hamburgerMobielProducts.style.display = 'block';
+    
+
+    const activatedModal = document.querySelectorAll('.active');
+
+    for (const el of activatedModal){
+        el.classList.remove('active');
+    }
+    activeModalMicro = null;
+    activeModalBtn = null;
+    searchModalMobile.style.display = "block";  
+
+    const closeModalBtnMobile = document.getElementById('closeModalBtnMobile');
+    closeModalBtnMobile.addEventListener('click', function(){
+        
+        searchModalMobile.style.display = "none";
+        currentCategory = 'Tradizione erboristica';  
+        currentPage = 1; 
+        rendereCategoria();  
+        categoriaAttiva.textContent = "> " + currentCategory;
+    });
+
+    const searchBtnModalMobile = document.getElementById('search-btn-modalMobile');
+    searchBtnModalMobile.addEventListener('click', () => {
+        currentSearchPage = 1;
+        searchProducts();
+    });
+}
+searchBtnMobile.addEventListener('click', showModalMobile)
+
+searchFieldMobile.addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
+
+        if (searchModalMobile.style.display !== "block") {
+            showModal();  
+        }
+        currentSearchPage = 1;  
+        searchProducts();  
+    }
+});
+
+
+
+
+
+
+
+
+
 
 
 
